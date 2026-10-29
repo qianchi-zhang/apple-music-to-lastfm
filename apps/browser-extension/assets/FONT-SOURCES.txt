@@ -1,0 +1,49 @@
+Coral typography and texture assets
+Retrieved: 2026-10-25
+
+General Sans
+============
+Publisher: Indian Type Foundry / Fontshare
+Official family: https://www.fontshare.com/fonts/general-sans
+Official CSS: https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap
+License: ITF Free Font License v2.0 (2026-08-17), see GENERAL-SANS-LICENSE.txt.
+The original WOFF2 files are embedded unchanged for this application UI only,
+as permitted by section 01 and the section 02 own-application exception.
+General Sans is proprietary freeware, not covered by the repository code license.
+Do not offer these files as a font library, selectable font service or separate
+download. Third parties needing the fonts must obtain them from Fontshare.
+No subsetting, format conversion, renaming inside fonts or metadata edits made.
+
+Geist Mono
+==========
+Publisher: The Geist Project Authors / Vercel
+Official project: https://github.com/vercel/geist-font
+Official CSS: https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&display=swap
+License: SIL Open Font License v1.1, see GEIST-MONO-LICENSE.txt.
+The Google Fonts Latin WOFF2 is embedded unchanged at weight 400.
+Original license source: https://raw.githubusercontent.com/google/fonts/main/ofl/geistmono/OFL.txt
+
+Textures
+========
+cotton.svg and felt.svg are procedural SVG assets included in this
+project under the repository license. They use stitched SVG turbulence
+filters and deterministic fibre strokes. No photos or outside images used.
+
+Font file provenance and SHA-256
+===============================
+
+general-sans-regular.woff2
+Source: https://cdn.fontshare.com/wf/MFQT7HFGCR2L5ULQTW6YXYZXXHMPKLJ3/YWQ244D6TACUX5JBKATPOW5I5MGJ3G73/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff2
+SHA-256: 3ec2be771caf168b077ca05af4df1dace77088e2b3a27da570036e61be58a039
+
+general-sans-medium.woff2
+Source: https://cdn.fontshare.com/wf/3RZHWSNONLLWJK3RLPEKUZOMM56GO4LJ/BPDRY7AHVI3MCDXXVXTQQ76H3UXA63S3/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.woff2
+SHA-256: c30377df1de8444d07161725c751f458beec07c28034df2fd275d1aa587a239f
+
+general-sans-semibold.woff2
+Source: https://cdn.fontshare.com/wf/K46YRH762FH3QJ25IQM3VAXAKCHEXXW4/ISLWQPUZHZF33LRIOTBMFOJL57GBGQ4B/3ZLMEXZEQPLTEPMHTQDAUXP5ZZXCZAEN.woff2
+SHA-256: 94a2a0e1ef59728eb65498ed7fe26e5af7e2858a3a4a278a89ac1f83a0544945
+
+geist-mono.woff2
+Source: https://fonts.gstatic.com/s/geistmono/v6/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5U5Cl4PuCTfNg.woff2
+SHA-256: 23840067d1dda8749b421a47c3e56205fa78c0d58d40baf3cc4d625fbe667f36

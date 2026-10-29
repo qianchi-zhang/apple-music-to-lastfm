@@ -1,0 +1,28 @@
+{
+  "artist": "卢广仲",
+  "album_artist": "卢广仲",
+  "name": "爱情怎么了吗",
+  "album": "爱情怎么了吗",
+  "isrc": "TWK011900001",
+  "duration_ms": 248280,
+  "_apple_album_upc": "4710255650023",
+  "_apple_album_track_count": 1,
+  "_apple_track_number": 1,
+  "_apple_disc_number": 1,
+  "_apple_artist_ids": [
+    "477669285"
+  ],
+  "_apple_release_date": "2019-03-12",
+  "_apple_is_compilation": false,
+  "_artist_region_evidence": {
+    "method": "musicbrainz_primary_artist_region",
+    "country": "TW",
+    "artist_mbid": "2ccc975f-ea40-4f0e-b861-8d80f967fe81",
+    "primary_artist": "卢广仲",
+    "name": "盧廣仲",
+    "region": {
+      "storefront": "tw",
+      "locale": "zh-Hant-TW"
+    }
+  }
+}

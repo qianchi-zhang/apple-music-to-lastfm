@@ -1,0 +1,4 @@
+STATUS_AUTH_KEY=replace-with-local-management-key
+LASTFM_API_KEY=replace-me
+LASTFM_SHARED_SECRET=replace-me
+LASTFM_SESSION_KEY=replace-me

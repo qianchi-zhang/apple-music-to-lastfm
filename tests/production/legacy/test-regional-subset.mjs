@@ -1,0 +1,15 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const x={console};vm.createContext(x);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const p=JSON.parse(fs.readFileSync(new URL('./evidence/latest-audit-readonly-probe.json',import.meta.url)));const [s,t]=p.variants;
+const raw=JSON.parse(fs.readFileSync(new URL('./evidence/latest-audit-album-isrc.json',import.meta.url)));const left=raw[0].tracks.map(t=>t.isrc),right=raw[1].tracks.map(t=>t.isrc);
+assert.equal(x.regionalAlbumSubsetEvidence(s,t,left,right),true);
+for(const patch of [{duration_ms:s.duration_ms+5001},{isrc:'wrong'},{_apple_release_date:'2020-01-01'},{_apple_is_compilation:true}])assert.equal(x.regionalAlbumSubsetEvidence(s,{...t,...patch},left,right),false);
+assert.equal(x.regionalAlbumSubsetEvidence(s,t,[...left.slice(0,-1),'wrong'],right),false);
+assert.equal(x.regionalAlbumSubsetEvidence(s,t,left.slice(0,2),right),false);
+const identity={confirmed:true,method:'isrc',recording_mbid:'r',release_mbid:'release',release_group_mbid:'group',release_track_number_confirmed:true,album:s.album};
+assert.equal(x.filterMusicBrainzConfirmedAppleVariants([s,t],identity).length,2);
+assert.equal(x.filterMusicBrainzConfirmedAppleVariants([s,t],null).length,1);
+x.getLastFmAlbumInfo=async()=>null;
+const fallback=await x.mapConfirmedIdentityToLastFm(t,[s,t],identity,null,'');
+assert.equal(fallback.artist,t.artist);assert.equal(fallback.name,t.name);assert.equal(fallback.album,t.album);
+console.log('PASS regional missing track: verified subset + MB identity; conflicts rejected; full native fallback');

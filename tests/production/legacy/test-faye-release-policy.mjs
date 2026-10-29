@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const x={};vm.createContext(x);
+vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const a=JSON.parse(fs.readFileSync(new URL('./evidence/faye-readonly-probe.json',import.meta.url))).variants;
+const recording={id:'c82554f1-2dda-4764-bfd5-7049c0afeea7',title:'償還 (粵) / 紅豆',length:228706,disambiguation:'live','artist-credit':[{name:'王菲'}]};
+const release={id:'5d5e73aa-90dc-4011-889b-f05dc4f03c33',title:'菲比尋常',status:'Official',date:'2004-11-12',barcode:'4716331044922','release-group':{title:'菲比尋常','primary-type':'Album','secondary-types':['Live']},media:[{position:1,'track-count':17,tracks:[{title:'償還 / 紅豆',position:16,length:228706,recording}]},{position:2,'track-count':16,tracks:[]}]};
+assert.ok(x.scoreMusicBrainzIdentityCandidate(recording,release,a,false,true));
+assert.ok(x.scoreMusicBrainzIdentityCandidate({...recording,length:233747},release,a,false,true));
+assert.equal(x.scoreMusicBrainzIdentityCandidate({...recording,length:233748},release,a,false,true),null);
+assert.equal(x.scoreMusicBrainzIdentityCandidate(recording,{...release,title:'另一場演唱會','release-group':{...release['release-group'],title:'另一場演唱會'}},a,false,true),null);
+console.log('PASS Faye: same live release, 41ms difference; differing count/barcode accepted; >5s and other concert rejected');

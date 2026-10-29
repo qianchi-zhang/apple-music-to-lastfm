@@ -1,0 +1,200 @@
+/* Coral palette converted from the official OKLCH values to sRGB for Chrome 102. */
+:root {
+  color-scheme: light;
+  --space-3xs: 2px;
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-4xl: 144px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.44rem;
+  --text-2xl: 1.728rem;
+  --text-3xl: 2.074rem;
+  --text-display-s: 1.44rem;
+  --text-display: 1.728rem;
+  --text-section: 1.2rem;
+  --text-title: 1rem;
+  --text-lead: 1rem;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+  --color-error: #be2323;
+  --color-success: #21763c;
+  --container: 1440px;
+  --gutter: 64px;
+  --gap-columns: 32px;
+  --section-gap-s: 120px;
+  --section-gap: 144px;
+  --section-gap-l: 176px;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+  --color-paper: #f8f4f1;
+  --color-paper-2: #f1ece8;
+  --color-paper-3: #e8e1dd;
+  --color-ink: #1d1614;
+  --color-ink-2: #312926;
+  --color-muted: #615955;
+  --color-rule: #d9d3cf;
+  --color-rule-2: #c7bfba;
+  --color-accent: #ef8b7b;
+  --color-accent-ink: #1d1614;
+  --color-accent-2: #bb3d31;
+  --color-focus: #bd3a2b;
+  --color-cotton: #fdfbf8;
+  --color-desk: #f0ebe7;
+  --color-print: #221b19;
+  --color-board: #1f1917;
+  --color-board-type: #f6f3ef;
+  --color-paid: #ba4a34;
+  --color-step-complete: #21763c;
+  --tex-cotton: url("./assets/cotton.svg");
+  --tex-desk: url("./assets/felt.svg");
+  --shade: 32% 0.03 50;
+  --lit: 100% 0.005 80;
+  --deep: 7% 0.01 40;
+  --font-display:
+    "General Sans", -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Microsoft YaHei", system-ui, sans-serif;
+  --font-body: var(--font-display);
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
+  --radius-card: 8px;
+  --radius-input: 6px;
+  --radius-pill: 999px;
+  --radius-stock: 8px;
+  --rule-hair: 1px;
+  --shadow-card: 0 1px 2px rgba(26, 20, 19, 0.05);
+  --edge-stock:
+    inset 0 1px 0 rgba(255, 255, 251, 0.9),
+    inset 0 -1px 0 rgba(64, 46, 37, 0.07), 0 0 0 0.5px rgba(64, 46, 37, 0.22),
+    0 1px 0 rgba(64, 46, 37, 0.12);
+  --cast-stock: 6px 5px 10px -6px rgba(64, 46, 37, 0.3);
+  --cast-stock-lift: 12px 10px 18px -8px rgba(64, 46, 37, 0.3);
+  --press-groove:
+    inset 1px 1.5px 2px rgba(64, 46, 37, 0.16),
+    inset -1px -1px 0 rgba(255, 255, 251, 0.9),
+    0 0 0 0.5px rgba(64, 46, 37, 0.2);
+  --tracking-display: -0.03em;
+  --display-weight: 600;
+}
+
+:root {
+  --background: var(--color-desk);
+  --surface: var(--color-cotton);
+  --surface-hover: var(--color-paper-3);
+  --selected: var(--color-paper-2);
+  --text: var(--color-ink);
+  --secondary-text: var(--color-ink-2);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --field-line: var(--color-muted);
+  --field: var(--color-cotton);
+  --accent: var(--color-accent-2);
+  --accent-strong: #9e241b;
+  --button-ink: var(--color-board);
+  --on-accent: var(--color-board-type);
+  --focus: var(--color-focus);
+  --success: var(--color-accent-2);
+  --success-surface: var(--color-paper-2);
+  --warning: #744711;
+  --warning-surface: #fcf0e0;
+  --selection: rgba(226, 138, 122, 0.24);
+  --disabled-surface: var(--color-paper-2);
+  --press-text: 0.5px 0.75px 0 var(--color-cotton);
+  --icon-filter: brightness(0) opacity(0.72);
+  --on-ink-icon-filter: brightness(0) invert(1) opacity(0.95);
+  --accent-icon-filter: invert(40%) sepia(37%) saturate(1348%)
+    hue-rotate(328deg) brightness(86%) contrast(100%);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --tex-cotton: none;
+  --tex-desk: none;
+  --color-paper: #100c0a;
+  --color-paper-2: #201c19;
+  --color-paper-3: #2d2824;
+  --color-ink: #efeae8;
+  --color-ink-2: #d0c9c6;
+  --color-muted: #aba39f;
+  --color-rule: #413c39;
+  --color-rule-2: #5a5450;
+  --color-accent: #f1a496;
+  --color-accent-2: #f09a8d;
+  --color-focus: #f99f90;
+  --color-cotton: #1d1a16;
+  --color-desk: #100d0a;
+  --color-print: #efeae8;
+  --color-board: #e6e0dd;
+  --color-board-type: #191512;
+  --color-paid: #ef9b89;
+  --color-step-complete: #8bd49f;
+  --accent-strong: #fdb6ab;
+  --warning: #eabe94;
+  --warning-surface: #2b2216;
+  --color-error: #ff9f94;
+  --color-success: #f09a8d;
+  --edge-stock: inset 0 0 0 1px var(--color-rule);
+  --cast-stock: 0 0 0 0 transparent;
+  --cast-stock-lift: 0 0 0 0 transparent;
+  --press-groove: inset 0 0 0 1px var(--color-rule);
+  --press-text: none;
+  --icon-filter: brightness(0) invert(1) opacity(0.8);
+  --on-ink-icon-filter: brightness(0) opacity(0.9);
+  --accent-icon-filter: invert(72%) sepia(32%) saturate(899%) hue-rotate(319deg)
+    brightness(102%) contrast(96%);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --tex-cotton: none;
+    --tex-desk: none;
+    --color-paper: #100c0a;
+    --color-paper-2: #201c19;
+    --color-paper-3: #2d2824;
+    --color-ink: #efeae8;
+    --color-ink-2: #d0c9c6;
+    --color-muted: #aba39f;
+    --color-rule: #413c39;
+    --color-rule-2: #5a5450;
+    --color-accent: #f1a496;
+    --color-accent-2: #f09a8d;
+    --color-focus: #f99f90;
+    --color-cotton: #1d1a16;
+    --color-desk: #100d0a;
+    --color-print: #efeae8;
+    --color-board: #e6e0dd;
+    --color-board-type: #191512;
+    --color-paid: #ef9b89;
+    --color-step-complete: #8bd49f;
+    --accent-strong: #fdb6ab;
+    --warning: #eabe94;
+    --warning-surface: #2b2216;
+    --color-error: #ff9f94;
+    --color-success: #f09a8d;
+    --edge-stock: inset 0 0 0 1px var(--color-rule);
+    --cast-stock: 0 0 0 0 transparent;
+    --cast-stock-lift: 0 0 0 0 transparent;
+    --press-groove: inset 0 0 0 1px var(--color-rule);
+    --press-text: none;
+    --icon-filter: brightness(0) invert(1) opacity(0.8);
+    --on-ink-icon-filter: brightness(0) opacity(0.9);
+    --accent-icon-filter: invert(72%) sepia(32%) saturate(899%)
+      hue-rotate(319deg) brightness(102%) contrast(96%);
+  }
+}

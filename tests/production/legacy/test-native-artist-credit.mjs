@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),c);
+const v={_artist_region_evidence:{country:'TW',artist_mbid:'shi',primary_apple_artist_id:'1'},_apple_storefront:'tw',_apple_artist_ids:['1'],_apple_artist_names:['孫盛希']};
+const m={artist:'Shi Shi & Other',album_artist:'Various Artists',mbid:'recording',name:'跟你住',album:'Girls'};
+const d={artist_credit:[{name:'Shi Shi',artist:{id:'shi'},joinphrase:' & '},{name:'Other',artist:{id:'other'}}],album_artist_credit:[{name:'Various Artists',artist:{id:'va'}}]};
+const r=c.preserveNativeHkTwArtist(m,[v],d);
+assert.equal(r.artist,'孫盛希 & Other');assert.equal(r.album_artist,'Various Artists');assert.equal(r.mbid,'recording');assert.equal(r.album,'Girls');
+assert.equal(c.preserveNativeHkTwArtist(m,[{...v,_apple_storefront:'cn'}],d).artist,m.artist);
+assert.equal(c.preserveNativeHkTwArtist(m,[{...v,_apple_artist_ids:['wrong']}],d).artist,m.artist);
+assert.equal(c.preserveNativeHkTwArtist(m,[{...v,_apple_artist_names:['Native English']}],d).artist,'Native English & Other');
+console.log('PASS native credit identity, region, collaborator, compilation and English-name guards');

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <filter id="felt" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="11" stitchTiles="stitch" result="cloud" />
+      <feColorMatrix in="cloud" type="matrix" values="0 0 0 0 .43 0 0 0 0 .39 0 0 0 0 .33 .09 0 0 0 0" result="shade" />
+      <feTurbulence type="fractalNoise" baseFrequency="0.92" numOctaves="2" seed="31" stitchTiles="stitch" result="grain" />
+      <feColorMatrix in="grain" type="matrix" values="0 0 0 0 .5 0 0 0 0 .46 0 0 0 0 .39 .05 0 0 0 0" result="fibre" />
+      <feBlend in="shade" in2="fibre" mode="multiply" />
+    </filter>
+  </defs>
+  <path d="M0 0H360V360H0Z" filter="url(#felt)" />
+  <g fill="none" stroke="#a79e90" stroke-width=".6" stroke-linecap="round" opacity=".15">
+    <path d="m13 37 4 2m42-19 3 3m40 47 5-1m43-37 3 3m58 24 5-2m53-33 4 3m56 42 4-1M31 107l5 2m34 33 4-3m64-32 3 3m42 47 5-1m48-33 4 2m52-22 4 3m46 33 4-3M15 207l4 3m52-26 5-1m44 45 3-3m56-33 5 1m44 40 3 3m57-40 5-1m47 31 4 3M36 284l4 3m48 38 5-1m43-48 3 3m54 37 5-2m49-44 4 3m53 34 5-1m39-38 3 3" />
+  </g>
+</svg>

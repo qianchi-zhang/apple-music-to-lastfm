@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const x={};vm.createContext(x);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const identity={confirmed:true,recording_mbid:'rec',release_mbid:'rel'};
+const release={status:'Official',title:'Piano Sonatas','artist-credit':[{name:'Beethoven'}],media:[{tracks:[{title:'Sonata: II. Andante',recording:{id:'rec','artist-credit':[{name:'Yu Kosuge'}]}}]}]};
+x.hydrateMusicBrainzRelease=async()=>release;
+let d=await x.confirmedMusicBrainzDisplay(identity,null);assert.equal(d.artist,'Yu Kosuge');assert.equal(d.album_artist,'Beethoven');assert.equal(d.track,'Sonata: II. Andante');
+release.media[0].tracks[0]['artist-credit']=[{name:'Credited Name'}];assert.equal((await x.confirmedMusicBrainzDisplay(identity,null)).artist,'Credited Name');
+assert.equal(await x.confirmedMusicBrainzDisplay({...identity,confirmed:false},null),null);
+release.status='Bootleg';assert.equal(await x.confirmedMusicBrainzDisplay(identity,null),null);release.status='Official';
+release.media[0].tracks.push({title:'Different title',recording:{id:'rec','artist-credit':[{name:'Yu Kosuge'}]}});assert.equal(await x.confirmedMusicBrainzDisplay(identity,null),null);
+console.log('PASS MB release Track credits, recording-credit fallback, official/confirmed and ambiguity guards');

@@ -1,0 +1,94 @@
+{
+  "releases": [
+    {
+      "status": "Official",
+      "packaging": null,
+      "barcode": null,
+      "disambiguation": "",
+      "title": "是日救星演唱会Live",
+      "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+      "quality": "normal",
+      "date": "2019-12",
+      "id": "f6b2bd9e-0e4c-4bbf-a630-592c4171800e",
+      "release-events": [
+        {
+          "date": "2019-12",
+          "area": null
+        }
+      ],
+      "release-group": {
+        "secondary-type-ids": [
+          "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+        ],
+        "primary-type": "Album",
+        "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+        "id": "f4f75aa9-d2b5-480f-a538-bedae3dc7562",
+        "releases": [],
+        "disambiguation": "",
+        "artist-credit": [
+          {
+            "joinphrase": "",
+            "artist": {
+              "name": "徐佳瑩",
+              "disambiguation": "",
+              "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+              "type": "Person",
+              "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+              "sort-name": "Hsu, LaLa",
+              "country": "TW"
+            },
+            "name": "徐佳瑩"
+          }
+        ],
+        "title": "是日救星演唱会Live",
+        "secondary-types": [
+          "Compilation"
+        ],
+        "first-release-date": "2019-12"
+      },
+      "artist-credit": [
+        {
+          "artist": {
+            "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+            "sort-name": "Hsu, LaLa",
+            "country": "TW",
+            "name": "徐佳瑩",
+            "disambiguation": "",
+            "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+            "type": "Person"
+          },
+          "joinphrase": "",
+          "name": "徐佳瑩"
+        }
+      ],
+      "country": null,
+      "packaging-id": null,
+      "text-representation": {
+        "script": "Hans",
+        "language": "zho"
+      }
+    }
+  ],
+  "isrcs": [],
+  "length": 221242,
+  "disambiguation": "",
+  "artist-credit": [
+    {
+      "name": "徐佳瑩",
+      "artist": {
+        "country": "TW",
+        "sort-name": "Hsu, LaLa",
+        "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+        "type": "Person",
+        "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+        "name": "徐佳瑩",
+        "disambiguation": ""
+      },
+      "joinphrase": ""
+    }
+  ],
+  "video": false,
+  "id": "3821d9aa-612d-4208-969b-f31be69b207a",
+  "first-release-date": "2019-12",
+  "title": "到此为止"
+}

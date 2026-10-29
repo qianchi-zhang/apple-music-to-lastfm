@@ -1,0 +1,17 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const x={};vm.createContext(x);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const source={artist:'Michita',name:'Cry For Me (feat. Ami)',album:'Cry For Me',isrc:'SOURCE',duration_ms:302867,_apple_album_track_count:1,_apple_release_date:'2013-07-24'};
+const credit=[{name:'Michita',artist:{name:'Michita'}}];
+const rec={id:'r',title:'Cry For Me (feat. 愛海)',length:302000,'artist-credit':credit,releases:[{id:'a',status:'Official',date:'2013-07-24'}]};
+const release={id:'a',title:'Pureness',date:'2013-07-24',status:'Official','artist-credit':credit,media:[{position:1,tracks:[{position:1,title:rec.title,length:302000,recording:{id:'r'}}]}]};
+x.lookupMusicBrainzRecordingsByIsrc=async()=>[];x.searchMusicBrainzRecordings=async()=>[rec];x.hydrateMusicBrainzRecording=async()=>rec;x.hydrateMusicBrainzRelease=async()=>release;
+x.fetch=()=>{throw Error('Apple must not be called');};
+const run=()=>x.resolveSourceMusicBrainzOfficial(source);
+assert.equal((await run()).identity.album,'Pureness');assert.equal((await run()).native.isrc,'SOURCE');
+release.date='2014-07-24';assert.equal(await run(),null);release.date='2013-07-24';
+rec.length=source.duration_ms+5000;assert.equal(await run(),null);rec.length=302000;
+source.name='Cry For Me (feat. Other)';assert.equal(await run(),null);source.name='Cry For Me (feat. Ami)';
+x.lookupMusicBrainzRecordingsByIsrc=async()=>[{...rec,title:'Different'}];assert.equal(await run(),null);
+x.lookupMusicBrainzRecordingsByIsrc=async()=>[];
+rec.releases.push({id:'b',status:'Official',date:'2013-07-24'});x.hydrateMusicBrainzRelease=async id=>({...release,id});assert.equal(await run(),null);
+console.log('PASS source-only MB identity, date, strict <5s, alias, ISRC conflict, ambiguity; no Apple request');

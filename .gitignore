@@ -1,0 +1,31 @@
+node_modules/
+dist/
+.wrangler/
+coverage/
+.env*
+!.env.example
+.dev.vars*
+!.dev.vars.example
+*.local.json
+
+.setup-lock/
+*.local.json.tmp
+
+apps/worker/production/runtime.generated.js
+
+# macOS metadata
+.DS_Store
+
+# Local Hallmark comparison records; design decisions are tracked separately.
+.hallmark/before.json
+.hallmark/before.txt
+.hallmark/before/
+.hallmark/compare.html
+.hallmark/screenshots/
+
+# Local browser QA captures are curated into reports before committing.
+output/playwright/
+.playwright-cli/
+
+# Generated verification output is available through CI artifacts.
+/reports/

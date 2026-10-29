@@ -1,0 +1,38 @@
+{
+  "name": "apple-music-scrobbler",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build": "npm run typecheck && node --import tsx scripts/build.ts",
+    "dev": "wrangler dev",
+    "migrate": "tsx scripts/migrate.ts",
+    "format": "prettier --write apps packages scripts tests examples docs README.md *.json *.jsonc *.ts .github/workflows/*.yml",
+    "format:check": "prettier --check apps packages scripts tests examples docs README.md *.json *.jsonc *.ts .github/workflows/*.yml",
+    "setup": "npm run build && node --import tsx scripts/setup.ts",
+    "pretest": "node --import tsx scripts/production-runtime.ts",
+    "predev": "node --import tsx scripts/production-runtime.ts",
+    "package:extension": "npm run build && node --import tsx scripts/extension-evidence.ts",
+    "test:production": "node tests/production/run.mjs",
+    "preview:extension": "tsx scripts/preview-extension.ts"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260907.1",
+    "@phosphor-icons/core": "^2.1.1",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.25.0",
+    "jsdom": "^26.1.0",
+    "miniflare": "5.20260907.0-alpha",
+    "prettier": "^3.9.6",
+    "tsx": "^4.19.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "wrangler": "^4.0.0"
+  }
+}

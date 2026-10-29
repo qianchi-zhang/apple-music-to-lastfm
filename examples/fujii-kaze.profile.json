@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "revision": 0,
+  "naming_strategy": "native_verified",
+  "rules": [
+    {
+      "id": "fujii-artist-name",
+      "enabled": true,
+      "field": "artist",
+      "match": {
+        "identity": {
+          "kind": "artist_mbid",
+          "id": "c3a4aeca-8f02-4d22-b1ff-693434ab09a8"
+        },
+        "aliases": ["藤井風", "藤井风", "Fujii Kaze"]
+      },
+      "value": "藤井 風"
+    },
+    {
+      "id": "fujii-album-artist-name",
+      "enabled": true,
+      "field": "album_artist",
+      "match": {
+        "identity": {
+          "kind": "artist_mbid",
+          "id": "c3a4aeca-8f02-4d22-b1ff-693434ab09a8"
+        },
+        "aliases": ["藤井風", "藤井风", "Fujii Kaze"]
+      },
+      "value": "藤井 風"
+    }
+  ]
+}

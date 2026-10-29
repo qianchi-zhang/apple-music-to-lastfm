@@ -1,0 +1,15 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const x={};vm.createContext(x);
+vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const source={artist:'王菲',name:'偿还 (Live)',album:'菲比寻常演唱会 (Live)',isrc:'VGA460401161',_metadata_source:'zh-Hans-CN',_is_source_storefront:true};
+assert.equal(x.supplementalAppleNativeRegions(source,null).map(r=>r.storefront).join(','),'hk,tw');
+const native={...source,name:'償還 (Live)',album:'菲比尋常演唱會 (Live)',_is_source_storefront:false,_metadata_source:'zh-Hant-HK',_apple_release_equivalence_requires_musicbrainz:false,_apple_release_equivalence_method:'exact_apple_catalog_release'};
+assert.equal(x.choosePreferredAppleTrack(source,[source,native]),native);
+assert.equal(x.choosePreferredAppleTrack(source,[source,{...native,_apple_release_equivalence_requires_musicbrainz:true}]),source);
+assert.equal(x.choosePreferredAppleTrack(source,[source,{...native,_apple_release_equivalence_method:undefined}]),source);
+assert.equal(x.supplementalAppleNativeRegions({name:'かな漢字'},null)[0].storefront,'jp');
+assert.equal(x.supplementalAppleNativeRegions({name:'한국'},null)[0].storefront,'kr');
+assert.equal(x.supplementalAppleNativeRegions({name:'English'},null).length,0);
+console.log('PASS unknown ISRC discovers native regions; only confirmed release adopted; kana/Hangul routing');

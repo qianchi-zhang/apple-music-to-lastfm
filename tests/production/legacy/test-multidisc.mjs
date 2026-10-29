@@ -1,0 +1,18 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const x={};vm.createContext(x);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const media=[15,13].map((count,d)=>({position:d+1,'track-count':count,tracks:Array.from({length:count},(_,k)=>({position:k+1,recording:{id:`${d+1}-${k+1}`}}))}));
+const release={id:'official',status:'Official','release-group':{id:'group'},media};
+const identity={recording_mbid:'2-11',release_group_mbid:'group',release_group_release_mbids:['official']};
+const source={name:'Dear God (Live)',duration_ms:395947,_apple_disc_number:2,_apple_track_number:11,_apple_album_track_count:28};
+assert.equal(x.verifiedMultiDiscAlbumPosition(release,source,identity),26);
+assert.equal(x.verifiedMultiDiscAlbumPosition(release,source,{...identity,recording_mbid:'wrong'}),null);
+assert.equal(x.verifiedMultiDiscAlbumPosition(release,{...source,_apple_album_track_count:27},identity),null);
+assert.equal(x.verifiedMultiDiscAlbumPosition(release,{...source,_apple_disc_number:1},identity),null);
+const related=structuredClone(release);related.id='related';related.status=null;
+assert.ok(x.sameMusicBrainzDiscRecordings(release,related));
+related.media[1].tracks[10].recording.id='different';assert.equal(x.sameMusicBrainzDiscRecordings(release,related),false);
+const album={tracks:{track:[{name:'Dear God',duration:365,'@attr':{rank:26}}]}};
+assert.equal(x.findLastFmAlbumTrack(album,source,{title:'Dear God'}),null);
+assert.ok(x.findLastFmAlbumTrack(album,source,{title:'Dear God'},{allow_verified_duration_anomaly:true,verified_album_track_number:26}));
+assert.equal(x.findLastFmAlbumTrack(album,source,{title:'Dear God'},{allow_verified_duration_anomaly:true,verified_album_track_number:25}),null);
+console.log('PASS: 2/11 -> 26; wrong recording/disc/count rejected; identical disc sequences only; duration anomaly requires exact verified position');

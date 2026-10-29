@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>音乐记录 · Apple Music Scrobbler</title>
+    <meta
+      name="description"
+      content="连接自己的 Apple Music 和 Last.fm，查看自动提交的音乐记录。"
+    />
+    <link rel="icon" type="image/png" href="assets/brand-icon-32.png" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="sidebar">
+        <a class="brand" href="#connections"
+          ><img src="assets/brand-icon-64.png" alt="" /><span
+            ><strong>音乐记录</strong><small>Apple Music Scrobbler</small></span
+          ></a
+        >
+        <nav aria-label="主导航">
+          <a href="#records" data-view="records"
+            ><img src="icons/clock.svg" alt="" />最近记录</a
+          >
+          <a href="#connections" data-view="connections" aria-current="page"
+            ><img src="icons/link.svg" alt="" />服务连接</a
+          >
+          <a href="#settings" data-view="settings"
+            ><img src="icons/gear.svg" alt="" />设置</a
+          >
+        </nav>
+        <span class="toolbar-context" id="toolbar-title">账户与服务</span>
+      </header>
+      <div class="content-shell">
+        <aside class="setup-rail" aria-label="连接步骤">
+          <p class="rail-label">连接进度</p>
+          <ol>
+            <li>
+              <button data-step="cloud" aria-current="step">
+                <span class="step-dot"></span
+                ><span
+                  >个人后台<small id="step-cloud-status">正在设置</small></span
+                >
+              </button>
+            </li>
+            <li>
+              <button data-step="apple" disabled>
+                <span class="step-dot"></span
+                ><span
+                  >Apple Music<small id="step-apple-status"
+                    >尚未连接</small
+                  ></span
+                >
+              </button>
+            </li>
+            <li>
+              <button data-step="lastfm" disabled>
+                <span class="step-dot"></span
+                ><span
+                  >Last.fm<small id="step-lastfm-status">尚未连接</small></span
+                >
+              </button>
+            </li>
+            <li id="confirm-step" hidden>
+              <button data-step="confirm">
+                <span class="step-dot"></span
+                ><span
+                  >确认并开始<small id="step-confirm-status"
+                    >等待确认</small
+                  ></span
+                >
+              </button>
+            </li>
+          </ol>
+        </aside>
+        <main id="main-content">
+          <section id="cloud" class="panel" aria-labelledby="cloud-title">
+            <div class="setup-heading">
+              <span class="service-symbol"
+                ><img src="icons/cloud.svg" alt=""
+              /></span>
+              <h1 id="cloud-title" tabindex="-1">连接个人后台</h1>
+              <p class="lead">
+                将记录服务安装到你自己的 Cloudflare，之后可在后台自动运行。
+              </p>
+            </div>
+            <div id="cloud-ready" class="ready-summary" hidden>
+              <p class="success-label">已找到个人后台</p>
+              <p id="backend-summary"></p>
+              <button id="verify">检查后台并继续</button>
+              <p class="hint">只检查连接状态，不开启记录或提交历史。</p>
+            </div>
+            <div id="cloud-form" class="task-surface">
+              <div class="external-task">
+                <img src="icons/cloud.svg" alt="" />
+                <div>
+                  <strong>创建 Cloudflare Token</strong>
+                  <p>Workers 与 KV 编辑 · 账户设置读取</p>
+                </div>
+                <a
+                  href="https://dash.cloudflare.com/profile/api-tokens?template=edit-cloudflare-workers"
+                  target="_blank"
+                  rel="noreferrer"
+                  >打开官网 <img src="icons/arrow-up-right.svg" alt=""
+                /></a>
+              </div>
+              <div class="field-heading">
+                <label for="token">Cloudflare API Token</label>
+              </div>
+              <div class="token-row">
+                <input
+                  id="token"
+                  type="password"
+                  autocomplete="off"
+                  spellcheck="false"
+                  placeholder="在此粘贴你的 API Token"
+                  aria-describedby="token-note"
+                /><button class="text-button muted" id="token-help">
+                  如何获取？
+                </button>
+              </div>
+              <button id="accounts" class="primary">连接 Cloudflare</button>
+              <p id="token-note" class="hint">
+                仅在本次安装中使用，部署完成后清除。
+              </p>
+              <div id="account-selection" hidden>
+                <label for="account">安装到哪个账户？</label
+                ><select id="account">
+                  <option value="">请先连接 Cloudflare</option></select
+                ><button id="deploy" class="primary" disabled>
+                  安装个人后台
+                </button>
+                <p class="hint">安装期间保留此标签页；中断后使用原账户继续。</p>
+              </div>
+            </div>
+            <p
+              id="install-status"
+              class="progress-message"
+              role="status"
+              hidden
+            ></p>
+            <div class="feedback-slot"></div>
+            <details id="cloud-help" class="help">
+              <summary>如何获取 Cloudflare API Token？</summary>
+              <ol class="instructions">
+                <li>在 Cloudflare 官网登录，选择你要部署的账户。</li>
+                <li>
+                  使用 Edit Cloudflare Workers 模板，仅保留
+                  <strong>Workers Scripts（Edit）</strong>、<strong
+                    >Workers KV Storage（Edit）</strong
+                  >
+                  和
+                  <strong>Account Settings（Read）</strong
+                  >。移除模板附带的其他权限。
+                </li>
+                <li>
+                  创建后复制 Token 并粘贴到上方。若账户尚无 workers.dev
+                  网址，先在
+                  <a
+                    href="https://dash.cloudflare.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Workers &amp; Pages</a
+                  >
+                  完成子域名设置，再回来继续。
+                </li>
+              </ol>
+            </details>
+            <p class="quiet-notice">
+              <img
+                src="icons/info.svg"
+                alt=""
+              />新后台默认暂停，确认音乐账户后再开始记录。
+            </p>
+          </section>
+          <section
+            id="apple"
+            class="panel"
+            aria-labelledby="apple-title"
+            hidden
+          >
+            <div class="setup-heading">
+              <span class="service-symbol"
+                ><img src="icons/music-note.svg" alt=""
+              /></span>
+              <h1 id="apple-title" tabindex="-1">连接 Apple Music</h1>
+              <p class="lead">
+                在 Apple 官网登录，再回到这里连接。密码只在 Apple 页面填写。
+              </p>
+            </div>
+            <div class="external-task">
+              <img src="icons/music-note.svg" alt="" />
+              <div>
+                <strong>打开 Apple Music</strong>
+                <p>使用你日常听歌的账户</p>
+              </div>
+              <a
+                href="https://music.apple.com/"
+                target="_blank"
+                rel="noreferrer"
+                >前往登录 <img src="icons/arrow-up-right.svg" alt=""
+              /></a>
+            </div>
+            <ol class="instructions">
+              <li>登录后等待音乐内容加载完成。</li>
+              <li>仅保留一个 Apple Music 标签页，避免连接到其他账户。</li>
+              <li>返回这里，允许扩展读取该页面并验证最近播放。</li>
+            </ol>
+            <button id="apple-connect" class="primary">
+              连接已登录的 Apple Music</button
+            ><button id="continue-apple" class="secondary" hidden>
+              继续连接 Last.fm
+            </button>
+            <div class="feedback-slot"></div>
+            <p class="quiet-notice">
+              <img
+                src="icons/info.svg"
+                alt=""
+              />连接信息只发送到你的个人后台；连接成功不会立即开启记录。
+            </p>
+          </section>
+          <section
+            id="lastfm"
+            class="panel"
+            aria-labelledby="lastfm-title"
+            hidden
+          >
+            <div class="setup-heading">
+              <span class="service-symbol"
+                ><img src="icons/link.svg" alt=""
+              /></span>
+              <h1 id="lastfm-title" tabindex="-1">连接 Last.fm</h1>
+              <p class="lead">
+                先配置自己的 API 应用，再到 Last.fm 官网允许账户连接。
+              </p>
+            </div>
+            <div id="lastfm-connected" class="ready-summary" hidden>
+              <p class="success-label">账户授权已保存</p>
+              <strong id="lastfm-user"></strong
+              ><button id="continue-lastfm" class="primary">
+                核对账户并继续
+              </button>
+            </div>
+            <details id="lastfm-config" class="task-surface" open>
+              <summary>配置 Last.fm 应用</summary>
+              <p>
+                在
+                <a
+                  href="https://www.last.fm/api/account/create"
+                  target="_blank"
+                  rel="noreferrer"
+                  >Last.fm 创建 API 应用</a
+                >。应用名称可填 Apple Music
+                Scrobbler；联系邮箱填你自己的邮箱。回调地址填写下方值，应用主页可填你的后台网址。
+              </p>
+              <label>Callback URL · 回调地址</label>
+              <div class="copy-field">
+                <code id="callback">请先完成个人后台设置</code
+                ><button
+                  id="copy-callback"
+                  class="icon-button"
+                  aria-label="复制回调地址"
+                >
+                  <img src="icons/copy.svg" alt="" />
+                </button>
+              </div>
+              <p class="hint">
+                官网创建后会显示 API Key 和 Shared
+                Secret，请分别复制到这里，不要填写账户密码。
+              </p>
+              <div class="input-grid">
+                <label
+                  >API Key<input
+                    id="lf-key"
+                    autocomplete="off"
+                    spellcheck="false" /></label
+                ><label
+                  >Shared Secret<input
+                    id="lf-secret"
+                    type="password"
+                    autocomplete="off"
+                /></label>
+              </div>
+              <button id="lf-save" class="secondary">保存应用配置</button>
+            </details>
+            <div id="lastfm-authorize" class="authorization">
+              <h2>允许你的账户连接</h2>
+              <p id="lastfm-app-status">请先保存应用配置。</p>
+              <ol class="instructions compact">
+                <li>复制管理钥匙，打开个人后台并粘贴解锁。</li>
+                <li>在后台点击连接 Last.fm，到官网核对账号并允许。</li>
+                <li>完成后回到此页；这里会自动检查授权结果。</li>
+              </ol>
+              <div class="button-row">
+                <button id="copy-key-lastfm" class="secondary">
+                  复制管理钥匙</button
+                ><button id="console" class="primary" disabled>
+                  打开后台完成授权
+                </button>
+              </div>
+              <button id="check-lastfm" class="text-button">
+                我已授权，检查连接
+              </button>
+            </div>
+            <div class="feedback-slot"></div>
+          </section>
+          <section
+            id="confirm"
+            class="panel"
+            aria-labelledby="confirm-title"
+            hidden
+          >
+            <div class="setup-heading">
+              <span class="service-symbol"
+                ><img src="icons/check.svg" alt=""
+              /></span>
+              <h1 id="confirm-title" tabindex="-1">准备开始记录</h1>
+              <p class="lead">你的下一首歌，将记录到这个 Last.fm 账户。</p>
+            </div>
+            <p id="confirm-user" class="account-name"></p>
+            <label class="check-label"
+              ><input
+                id="account-confirmed"
+                type="checkbox"
+              />我已核对，这是要记录到的账户</label
+            >
+            <p>
+              首次开始会建立当前播放基线，不补传旧历史。看到开启成功后再播放新歌，后台约每三分钟检查一次，Apple
+              播放历史也可能延迟更新。
+            </p>
+            <button id="start" class="primary" disabled>开始自动记录</button
+            ><button id="go-records" class="secondary" hidden>
+              查看最近记录
+            </button>
+            <div class="feedback-slot"></div>
+          </section>
+          <section
+            id="records"
+            class="panel records-panel"
+            aria-labelledby="records-title"
+            hidden
+          >
+            <div class="page-heading">
+              <div>
+                <h1 id="records-title" tabindex="-1">最近记录</h1>
+              </div>
+              <button id="refresh" class="secondary">刷新状态</button>
+            </div>
+            <div class="monitor-surface">
+              <div id="runtime-summary">
+                <p id="runtime" class="runtime-title">尚未读取后台状态</p>
+                <p id="connections" class="hint">
+                  完成服务连接后，在这里查看记录。
+                </p>
+                <dl class="runtime-facts">
+                  <div>
+                    <dt>上次检查</dt>
+                    <dd id="last-run">尚未检查</dd>
+                  </div>
+                  <div>
+                    <dt>下次检查</dt>
+                    <dd id="next-run">尚未安排</dd>
+                  </div>
+                  <div>
+                    <dt>已提交</dt>
+                    <dd id="submitted">—</dd>
+                  </div>
+                  <div>
+                    <dt>待处理</dt>
+                    <dd id="pending">—</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="button-row">
+                <button id="resume" class="primary">继续设置</button
+                ><button id="pause" class="secondary" disabled>
+                  <img src="icons/pause.svg" alt="" />暂停记录
+                </button>
+              </div>
+            </div>
+            <div class="feedback-slot"></div>
+            <p id="runtime-error" class="runtime-warning" hidden></p>
+            <div id="empty-records" class="empty-state">
+              <img src="icons/music-notes.svg" alt="" />
+              <h2>等待你的第一首歌</h2>
+              <p id="empty-detail">先连接音乐账户，再开始自动记录。</p>
+              <p class="hint">开启后正常播放即可，无需让这个页面一直打开。</p>
+            </div>
+            <div
+              id="record-header"
+              class="record-header"
+              aria-hidden="true"
+              hidden
+            >
+              <span></span><span>歌曲</span><span>艺人</span><span>专辑</span
+              ><span>记录状态</span>
+            </div>
+            <div id="record-list" aria-label="最近已提交歌曲"></div>
+          </section>
+          <section
+            id="settings"
+            class="panel"
+            aria-labelledby="settings-title"
+            hidden
+          >
+            <h1 id="settings-title" tabindex="-1">设置</h1>
+            <p class="lead">保存个人后台的信息，以便以后继续使用。</p>
+            <div class="settings-group appearance-group">
+              <h2>外观</h2>
+              <fieldset
+                class="appearance-switch"
+                aria-describedby="theme-status"
+              >
+                <legend>外观</legend>
+                <div class="appearance-options">
+                  <label
+                    ><input
+                      type="radio"
+                      name="appearance"
+                      value="system"
+                      aria-label="跟随系统"
+                      checked
+                    /><span>自动</span></label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="appearance"
+                      value="light"
+                      aria-label="浅色"
+                    /><span>浅色</span></label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="appearance"
+                      value="dark"
+                      aria-label="深色"
+                    /><span>深色</span></label
+                  >
+                </div>
+                <p id="theme-status" role="status" aria-live="polite">
+                  跟随系统配色
+                </p>
+              </fieldset>
+              <p class="hint">默认跟随系统，也可以单独选择此控制台的外观。</p>
+            </div>
+            <div class="settings-group">
+              <h2>个人后台</h2>
+              <code id="backend">尚未安装</code>
+              <div class="button-row">
+                <button id="copy-key" class="secondary">复制管理钥匙</button
+                ><button id="open-backend" class="secondary">
+                  打开个人后台
+                </button>
+              </div>
+              <p>
+                管理钥匙保存在此浏览器扩展的本地存储，不加密、不跨设备同步。请将钥匙和网址保存到密码管理器；不要分享或放进截图。
+              </p>
+              <p class="hint">
+                当前尚无导入旧后台或自动升级界面。不要卸载扩展或删除安装文件夹来处理连接错误。
+              </p>
+            </div>
+            <div class="settings-group">
+              <h2>版本与运行方式</h2>
+              <p id="version-info">扩展 0.1.0 · 固定算法 0.3.111</p>
+              <p>
+                “已连接”代表已保存连接信息，不保证凭据一直有效。出现记录异常时，请检查运行结果并重新连接对应服务。
+              </p>
+            </div>
+            <button id="back-to-connections" class="text-button">
+              检查服务连接
+            </button>
+            <div class="feedback-slot"></div>
+          </section>
+          <div
+            id="feedback"
+            class="inline-feedback"
+            role="status"
+            tabindex="-1"
+            hidden
+          >
+            <strong id="feedback-title"></strong>
+            <p id="feedback-detail"></p>
+            <button id="recovery" class="text-button" hidden>检查状态</button>
+          </div>
+        </main>
+        <footer class="app-footnote">
+          你的账户，你的后台。音乐记录只属于你。
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

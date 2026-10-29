@@ -1,0 +1,24 @@
+// Independent Apple connection test. Never bind this to production storage.
+// Copy to wrangler.apple-test.local.json and replace the namespace ID.
+{
+  "name": "apple-music-scrobbler-apple-test",
+  "main": "apps/worker/src/index.ts",
+  "compatibility_date": "2026-09-08",
+  "workers_dev": true,
+  "kv_namespaces": [
+    {
+      "binding": "ASCROBBLE_STATE",
+      "id": "REPLACE_WITH_NEW_TEST_KV_NAMESPACE_ID",
+    },
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "SCROBBLE_COORDINATOR", "class_name": "ScrobbleCoordinator" },
+    ],
+  },
+  "migrations": [
+    { "tag": "v1", "new_sqlite_classes": ["ScrobbleCoordinator"] },
+  ],
+  "triggers": { "crons": [] },
+  "observability": { "enabled": false },
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>连接 Apple Music</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/brand-icon-32.png"
+    />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img class="mark" src="assets/brand-icon-64.png" alt="" />
+      <div>
+        <strong>Apple Music Scrobbler</strong><small>连接助手 · 测试版</small>
+      </div>
+    </header>
+    <main>
+      <h1>连接你的 Apple Music</h1>
+      <p>在 Apple Music 官网登录，再把连接交给你自己的记录服务。</p>
+      <ol>
+        <li>
+          打开 Apple Music，完成登录。<button id="open" class="secondary">
+            打开 Apple Music ↗
+          </button>
+        </li>
+        <li>在 Apple Music 标签页，点击浏览器工具栏里的本扩展。</li>
+        <li>确认下方后台地址，点击连接。</li>
+      </ol>
+      <button id="check" class="secondary">
+        先检查 Apple 登录（不发送凭据）
+      </button>
+      <label for="backend">你的后台网址</label
+      ><input
+        id="backend"
+        type="url"
+        placeholder="https://你的服务.workers.dev"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <label for="key">后台管理密钥</label
+      ><input
+        id="key"
+        type="password"
+        placeholder="仅本次连接使用"
+        autocomplete="off"
+      />
+      <p id="destination" class="destination">
+        填写后会在这里显示接收凭据的网站。
+      </p>
+      <button id="connect" class="primary">连接并验证 Apple Music</button>
+      <div id="status" role="status" aria-live="polite" data-kind="info">
+        连接只验证读取能力，不会提交播放记录。
+      </div>
+      <small id="diagnostic"></small>
+      <details>
+        <summary>这个扩展会读取什么？</summary>
+        <p>
+          只在你点击检查或连接时，读取当前 Apple Music
+          页面的音乐访问凭据。不读取密码，不收集其他网页内容。凭据交给上方后台，不存入扩展；扩展只记住后台网址。
+        </p>
+        <p>
+          测试版尚未上架。首次需要手动加载扩展和填写后台管理密钥；后续网页配对流程尚未实现。
+        </p>
+      </details>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const ctx={};vm.createContext(ctx);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),ctx);
+const actual=JSON.parse(fs.readFileSync(new URL('./evidence/musicbrainz-audit-109.json',import.meta.url),'utf8'))[0].events.find(e=>e.count).recordings;
+const source={name:'Dear God (Live)',album:'Soul Power (現場原音專輯)',duration_ms:395947,_is_source_storefront:true};
+const ranked=ctx.rankMusicBrainzRecordingCandidates(actual,[source]);
+assert.equal(ranked[0].id,'5ba76188-84fc-4e18-87ee-3431610c7e24');
+assert.ok(!ranked.some(r=>r.length&&Math.abs(r.length-source.duration_ms)>5000));
+assert.ok(ranked.some(r=>!r.length),'Missing duration is not a mismatch');
+assert.equal(ctx.rankMusicBrainzRecordingCandidates([...actual,...actual],[source]).length,ranked.length);
+const many=Array.from({length:9},(_,i)=>({id:String(i),title:'Dear God',length:395947,releases:[{title:i===8?'Soul Power Live':'Unrelated Live'}]}));
+assert.equal(ctx.rankMusicBrainzRecordingCandidates(many,[source]).slice(0,5)[0].id,'8');
+console.log('PASS: actual fifth result ranked first; mismatch filtered; unknown retained; dedup before limit; late best retained');

@@ -1,0 +1,18 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),c);
+const audio={id:'audio',title:'Do You Ever Shine?',length:270000,video:false};
+const mv={id:'mv',title:'Do You Ever Shine? Music Video',video:false,length:null};
+const release={media:[{format:'CD',tracks:[{title:audio.title,recording:audio}]},{format:'DVD',tracks:[{title:mv.title,recording:mv}]}]};
+assert.equal(c.isMusicBrainzAudioCandidate(audio,release),true);
+assert.equal(c.isMusicBrainzAudioCandidate(mv,release),false);
+assert.equal(c.isMusicBrainzAudioCandidate({...audio,video:true}),false);
+assert.equal(c.isMusicBrainzAudioCandidate({...audio,title:'Song (MV)'}),false);
+assert.equal(c.isMusicBrainzAudioCandidate(audio,{media:[{format:'DVD',tracks:[{title:audio.title,recording:audio}]}]}),false);
+assert.equal(c.isMusicBrainzAudioCandidate({...audio,title:'Music (Live)'}),true);
+const tracks=[{artist:'五月天',name:audio.title,album:audio.title,duration_ms:269920}];
+assert.equal(c.scoreMusicBrainzIdentityCandidate(mv,release,tracks,false),null);
+assert.equal(c.scoreMusicBrainzIdentityCandidate({...audio,length:null},null,tracks,false),null);
+const ranked=c.rankMusicBrainzRecordingCandidates([mv,audio],tracks);
+assert.equal(ranked.length,1);assert.equal(ranked[0].id,'audio');
+assert.equal(c.isMusicBrainzAudioCandidate({track:mv.title}),false);
+console.log('PASS audio-only: video flags/titles/DVD rejected before top-five; CD+DVD audio and live retained; unknown duration not accepted by fuzzy search');

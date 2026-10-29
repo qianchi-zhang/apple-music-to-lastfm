@@ -1,0 +1,11 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const x={};vm.createContext(x);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),x);
+const s={artist:'G-DRAGON',name:'삐딱하게 (Crooked)',album:"G-Dragon 2nd Album : Coup D'etat",isrc:'HKtest',duration_ms:226783,_apple_release_date:'2013-09-13',_apple_album_track_count:12,_apple_track_number:7};
+const credit=[{name:'G-DRAGON'}];const rec={id:'rec',title:'삐딱 하게 (Crooked)',length:227000,'artist-credit':credit,releases:[{id:'rel',title:'COUP D’ETAT',status:'Official',date:'2013-09-13'}]};
+const release={id:'rel',title:'COUP D’ETAT',status:'Official',date:'2013-09-13','artist-credit':credit,media:[{position:1,'track-count':14,tracks:[{position:8,title:rec.title,length:227000,recording:{id:'rec'}}]}]};
+x.lookupMusicBrainzRecordingsByIsrc=async()=>[];x.searchMusicBrainzRecordings=async(a,t)=>t==='Crooked'?[rec]:[];x.hydrateMusicBrainzRecording=async()=>rec;x.hydrateMusicBrainzRelease=async()=>release;
+assert.equal((await x.resolveSourceMusicBrainzOfficial(s)).identity.release_mbid,'rel');
+release.date='2015-01-01';assert.equal(await x.resolveSourceMusicBrainzOfficial(s),null);release.date='2013-09-13';
+release.title='Other concert';assert.equal(await x.resolveSourceMusicBrainzOfficial(s),null);release.title='COUP D’ETAT';
+release.media[0].tracks[0].length=s.duration_ms+5000;assert.equal(await x.resolveSourceMusicBrainzOfficial(s),null);
+console.log('PASS regional counts/order differ; title alias search; date/album/strict-duration guards');

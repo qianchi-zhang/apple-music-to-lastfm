@@ -1,0 +1,12 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),c);
+const body={track_id:'song',fingerprint:'a'.repeat(32),artist:'五月天',track:'Do You Ever Shine?',album:'Do You Ever Shine?'};
+const target={track_id:'song',artist:body.artist,track:body.track,album:body.album};
+const ledger={recent_scrobbles:[target,{...target,track_id:'other'},{...target,album:'Other'}],previous_recent:['source'],recent_scrobble_ids:['dedup'],pending_scrobbles:['pending'],stats:{total_scrobbled:123}};
+c.loadLedger=async()=>structuredClone(ledger);let saved,writes=0;c.saveLedger=async(k,l)=>{saved=l};
+const kv={async get(){return {...body,verified:true}},async put(){writes++}};
+assert.equal((await c.removeHistoricalMappingRows({ASCROBBLE_STATE:kv},{...body,dry_run:true})).removed.length,1);assert.equal(writes,0);assert.equal(saved,undefined);
+assert.equal((await c.removeHistoricalMappingRows({ASCROBBLE_STATE:kv},body)).removed_count,1);assert.equal(saved.recent_scrobbles.length,2);
+for(const key of ['previous_recent','recent_scrobble_ids','pending_scrobbles','stats'])assert.deepEqual(saved[key],ledger[key]);
+await assert.rejects(c.removeHistoricalMappingRows({ASCROBBLE_STATE:kv},{...body,album:'wrong'}));
+console.log('PASS scoped deletion, dry-run and conflict guard; baseline, dedup, queue, counts and unrelated rows preserved');

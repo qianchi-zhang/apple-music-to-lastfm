@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const c={};vm.createContext(c);
+vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),c);
+assert.equal(c.normalizeLastFmAlbumArtist('群星'),'Various Artists');
+assert.equal(c.normalizeLastFmAlbumArtist(' 群星 '),'Various Artists');
+for(const v of ['五月天','Various Artists','群星 & 五月天','',undefined])assert.equal(c.normalizeLastFmAlbumArtist(v),v);
+const play={track:{id:'test',artist:'群星',name:'Song',album:'Album',album_artist:'群星',mbid:'recording',mbid_kind:'recording'},timestamp:new Date('2026-10-11T10:00:42.061Z'),kind:'new'};
+const payload=c.buildLastFmPayload(play);
+assert.equal(payload.artist,'群星');assert.equal(payload.album_artist,'Various Artists');assert.equal(payload.mbid,'recording');assert.equal(payload.timestamp,play.timestamp);
+const ledger={pending_scrobbles:[]};c.appendPendingScrobbles(ledger,[play]);assert.equal(ledger.pending_scrobbles[0].album_artist,'Various Artists');
+console.log('PASS album artist alias, unchanged track artist and metadata, persistent queue and legacy payload');

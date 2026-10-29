@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "schema_version": 1,
+    "revision": 0,
+    "naming_strategy": "apple_source",
+    "rules": []
+  },
+  "track": {
+    "source": {
+      "id": "example-1",
+      "name": "Example Song",
+      "artist": "Example Artist",
+      "album": "Example Album",
+      "duration_ms": 180000
+    },
+    "identity": {},
+    "canonical": {
+      "artist": "Example Artist",
+      "album_artist": "Example Artist",
+      "track": "Example Song",
+      "album": "Example Album"
+    },
+    "evidence": {}
+  }
+}

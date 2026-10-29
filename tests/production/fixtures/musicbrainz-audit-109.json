@@ -1,0 +1,841 @@
+[
+  {
+    "events": [
+      {
+        "count": 1,
+        "recordings": [
+          {
+            "id": "fb1caa4d-fd73-4c5c-b62a-fff9806ceb5d",
+            "title": "Dear God",
+            "length": 329000,
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "bade1adc-6282-427e-802d-b523ab3ad434",
+                "title": "黑色柳丁"
+              },
+              {
+                "id": "161d7e8e-29de-4ca2-a755-dd3595650aa4",
+                "title": "黑色柳丁"
+              },
+              {
+                "id": "75e4a0d1-9b14-4b80-bb90-b6f5af071758",
+                "title": "Black Tangerine"
+              },
+              {
+                "id": "4484a84b-8c1e-4e2d-bcf5-7ebc1f983944",
+                "title": "黑色柳丁"
+              }
+            ]
+          },
+          {
+            "id": "c3aba185-5aad-46e6-b61a-0245e999a569",
+            "title": "Dear God",
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "1ccf43a8-753f-4153-a2e6-3c2cc5e24978",
+                "title": "Love Can 就是爱你演唱会"
+              }
+            ]
+          },
+          {
+            "id": "6671df74-571d-4785-9f2a-af0e003f4821",
+            "title": "Dear God",
+            "length": 365973,
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "9729007d-aedb-46b7-9bd3-a5747b91576f",
+                "title": "1.2.3我們都是木頭人 陶喆 世界巡迴演唱會"
+              }
+            ]
+          },
+          {
+            "id": "bfdfad39-3aeb-4857-8be1-e53459dd3f35",
+            "title": "Dear God",
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "ab4ded37-78c9-4703-bed8-5124c0e5a296",
+                "title": "Bring The Light In 欢迎光临台北演唱会"
+              }
+            ]
+          },
+          {
+            "id": "5ba76188-84fc-4e18-87ee-3431610c7e24",
+            "title": "Dear God",
+            "length": 395946,
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "92f2adb8-665c-42e9-a351-591f8666336e",
+                "title": "Soul Power Live"
+              },
+              {
+                "id": "b3cf66e4-0938-4ca4-b8c4-3cd86a7b47b8",
+                "title": "Soul Power Live"
+              }
+            ]
+          },
+          {
+            "id": "ab16f0f4-c23a-4cfd-b1a0-c09f1a3f6cb2",
+            "title": "Dear God",
+            "length": 329133,
+            "artists": [
+              {
+                "name": "陶喆",
+                "artist": {
+                  "id": "38fe7fb3-2bde-4672-8016-2ba6f7d1808f",
+                  "name": "陶喆",
+                  "sort-name": "Tao, David",
+                  "aliases": [
+                    {
+                      "sort-name": "Tao, Syu-Jhong",
+                      "name": "Syu-Jhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Xu-Zhong",
+                      "name": "Xu-Zhong Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Jhe",
+                      "name": "Jhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Zhe",
+                      "name": "Zhe Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶喆",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "陶喆",
+                      "locale": "zh",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, Ji",
+                      "name": "Ji Tao",
+                      "locale": null,
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶绪忠",
+                      "name": "陶绪忠",
+                      "locale": "zh_Hans",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David Zee",
+                      "name": "David Zee Tao",
+                      "locale": "en",
+                      "type": null,
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶緒忠",
+                      "type-id": "d4dcd0c0-b341-3612-a332-c0ce797b25cf",
+                      "name": "陶緒忠",
+                      "locale": "zh_Hant",
+                      "type": "Legal name",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "陶吉吉",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "陶吉吉",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "³³¦N¦N",
+                      "type-id": "1937e404-b981-3cb7-8151-4c86ebfc8d8e",
+                      "name": "³³¦N¦N",
+                      "locale": null,
+                      "type": "Search hint",
+                      "primary": null,
+                      "begin-date": null,
+                      "end-date": null
+                    },
+                    {
+                      "sort-name": "Tao, David",
+                      "type-id": "894afba6-2816-3c24-8072-eadb66bd04bc",
+                      "name": "David Tao",
+                      "locale": "en",
+                      "type": "Artist name",
+                      "primary": true,
+                      "begin-date": null,
+                      "end-date": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "releases": [
+              {
+                "id": "6bbefda8-3db3-42f1-a250-3b4c296c39ab",
+                "title": "黑色柳丁"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

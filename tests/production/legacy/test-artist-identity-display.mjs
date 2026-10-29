@@ -1,0 +1,17 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+const c={};vm.createContext(c);vm.runInContext(fs.readFileSync(new URL('./worker-fixed.js',import.meta.url),'utf8').replace(/export\s*\{\s*ScrobbleCoordinator,\s*index_default as default\s*\};\s*$/,''),c);
+const t={artist:'五月天',album_artist:'五月天',name:'Do You Ever Shine?',album:'Do You Ever Shine?',duration_ms:269920,_apple_artist_ids:['apple-id'],_artist_region_evidence:{method:'musicbrainz_primary_artist_region',artist_mbid:'mayday-id',primary_apple_artist_id:'apple-id'}};
+const r={id:'audio',title:t.name,length:270000,'artist-credit':[{name:'Mayday',artist:{id:'mayday-id',name:'五月天'}}]};
+assert.equal(c.musicBrainzArtistIdentityMatches(r,[t]),true);
+const alias={...r,'artist-credit':[{name:'Mayday',artist:{id:'mayday-id',name:'Mayday'}}]};
+assert.equal(c.musicBrainzArtistIdentityMatches(alias,[t]),true);
+const stranger={...r,'artist-credit':[{name:'Other',artist:{id:'other-id',name:'Other'}}]};
+assert.equal(c.musicBrainzArtistIdentityMatches(stranger,[t]),false);
+assert.equal(c.musicBrainzArtistIdentityMatches(alias,[{...t,_apple_artist_ids:['wrong-id']}]),false);
+assert.equal(c.musicBrainzArtistIdentityMatches(alias,[{...t,_artist_region_evidence:{...t._artist_region_evidence,method:'guess'}}]),false);
+const release={id:'release',title:t.album,status:'Official','release-group':{'primary-type':'EP'},media:[{format:'CD','track-count':6,tracks:[{position:1,title:t.name,length:270000,recording:r}]}]};
+assert.ok(c.scoreMusicBrainzIdentityCandidate(r,release,[t],false));
+assert.equal(t.artist,'五月天');assert.equal(r['artist-credit'][0].name,'Mayday');
+assert.equal(c.scoreMusicBrainzIdentityCandidate({...r,title:t.name+' Music Video'},release,[t],false),null);
+assert.equal(c.scoreMusicBrainzIdentityCandidate({...r,length:242000},release,[t],false),null);
+console.log('PASS identity accepts formal name or verified same MBID; native display untouched, unrelated artist, unbound evidence, video and duration guards retained');

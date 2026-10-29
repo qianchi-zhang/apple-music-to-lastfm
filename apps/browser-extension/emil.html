@@ -1,0 +1,938 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="让 Apple Music 的每次聆听，在 Last.fm 留下回响。"
+    />
+    <title>余音 · 音乐记录</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/brand-icon-32.png"
+    />
+    <link rel="stylesheet" href="emil.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-initializing="true">
+    <svg
+      class="symbol-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <symbol id="i-music" viewBox="0 0 24 24">
+        <path d="M9 17V5l11-2v12M9 8l11-2" />
+        <ellipse cx="5.5" cy="18" rx="3.5" ry="2.5" />
+        <ellipse cx="16.5" cy="16" rx="3.5" ry="2.5" />
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24">
+        <path d="M7 18a5 5 0 1 1 .7-9.95A6 6 0 0 1 19 11a3.5 3.5 0 0 1-.5 7Z" />
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24">
+        <path d="m5 12 4.5 4.5L19 7" />
+      </symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-6-6 6 6-6 6" />
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24">
+        <path d="m6 6 12 12M6 18 18 6" />
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M20 8A8 8 0 1 0 21 14M20 3v5h-5" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m9 5 7 7-7 7" />
+      </symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="12" height="13" rx="3" />
+        <path d="M15 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3" />
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24">
+        <path
+          d="M14 3h7v7m0-7L10 14M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"
+        />
+      </symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24">
+        <path d="M8 5v14M16 5v14" stroke-width="3.5" />
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24">
+        <path d="m9 5 11 7-11 7Z" />
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="4" />
+        <path
+          d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+        />
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24">
+        <path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z" />
+      </symbol>
+      <symbol id="i-device" viewBox="0 0 24 24">
+        <rect x="3" y="4" width="18" height="13" rx="2" />
+        <path d="M8 21h8m-4-4v4" />
+      </symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24">
+        <path d="M3 10v4m4-7v10m5-14v18m5-15v12m4-8v4" />
+      </symbol>
+      <symbol id="i-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 11v6m0-10v.5" />
+      </symbol>
+    </svg>
+    <a href="#main" class="skip-link">跳到内容</a>
+    <header class="topbar">
+      <a class="brand" href="#journal" aria-label="余音，聆听记录"
+        ><span class="brand-symbol"
+          ><img
+            src="assets/brand-icon-128.png"
+            width="128"
+            height="128"
+            alt="" /></span
+        ><span>余音<span class="brand-subtitle">音乐记录</span></span></a
+      >
+      <nav class="main-navigation" aria-label="主导航">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <button type="button" data-page="journal" aria-current="page">
+          聆听记录
+        </button>
+        <button type="button" data-page="connections">连接设置</button>
+        <button type="button" data-page="settings">设置</button>
+      </nav>
+      <button
+        class="connection-pill"
+        id="top-status"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="setup-sheet"
+      >
+        <span class="status-dot"></span
+        ><span id="top-status-label">正在读取</span
+        ><svg><use href="#i-chevron" /></svg>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="startup-state" id="startup-state" role="status">
+        正在读取你的连接…
+      </div>
+      <section id="page-journal" class="page" aria-label="聆听记录">
+        <div class="journal-content">
+          <section class="history-section" aria-label="最近聆听的歌曲">
+            <div id="records" class="records" aria-live="polite"></div>
+            <div id="empty-history" class="empty-history">
+              <span class="empty-symbol"
+                ><svg><use href="#i-wave" /></svg
+              ></span>
+              <h3>等一首歌的时间</h3>
+              <p id="empty-description">
+                完成连接后，新的聆听记录会出现在这里。
+              </p>
+              <button type="button" class="text-button" id="empty-connect">
+                开始连接 <svg><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+            <div class="history-footer">
+              <p class="history-footnote" id="history-footnote">最近 10 首</p>
+              <a
+                id="more-history"
+                class="text-button"
+                target="_blank"
+                rel="noopener noreferrer"
+                hidden
+              >
+                查看更多
+                <svg aria-hidden="true"><use href="#i-external" /></svg>
+              </a>
+            </div>
+          </section>
+          <aside class="album-wall" aria-label="最新聆听的专辑">
+            <div class="memory-object">
+              <div class="memory-stage">
+                <div class="memory-disc" aria-hidden="true">
+                  <div class="disc-grooves"></div>
+                  <div class="disc-label">
+                    <img
+                      src="assets/brand-icon-128.png"
+                      width="128"
+                      height="128"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="memory-sleeve">
+                  <img
+                    id="latest-artwork"
+                    width="600"
+                    height="600"
+                    alt=""
+                    decoding="async"
+                    referrerpolicy="no-referrer"
+                    hidden
+                  />
+                  <div id="artwork-placeholder" class="artwork-placeholder">
+                    <svg aria-hidden="true"><use href="#i-music" /></svg>
+                    <span>尚无聆听记录</span>
+                  </div>
+                </div>
+              </div>
+              <div class="memory-caption">
+                <span class="memory-kicker">最近聆听</span>
+                <strong id="latest-track">暂无记录</strong>
+                <span id="latest-artist"></span>
+                <span id="latest-album"></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section
+        id="page-connections"
+        class="page secondary-page"
+        aria-labelledby="connections-title"
+        hidden
+      >
+        <div class="connections-layout">
+          <div class="page-intro connection-intro">
+            <p class="eyebrow">
+              <span class="tiny-line"></span
+              ><span id="connections-eyebrow">欢迎使用余音</span>
+            </p>
+            <h1 id="connections-title">开始前，<br />连接你的音乐。</h1>
+            <p class="intro-description" id="connections-description">
+              完成这三个连接，让 Apple Music 的聆听自动记录到 Last.fm。
+            </p>
+            <div class="setup-entry">
+              <button
+                type="button"
+                class="button primary"
+                id="continue-setup"
+                disabled
+              >
+                开始连接 <svg><use href="#i-arrow" /></svg>
+              </button>
+              <span class="setup-summary" id="setup-summary" role="status"
+                >正在读取连接状态…</span
+              >
+              <p class="setup-next-description" id="setup-next-description">
+                从个人后台开始，接着连接 Apple Music 和 Last.fm。
+              </p>
+            </div>
+          </div>
+          <div class="connection-workflow">
+            <div class="connection-list">
+              <article class="connection-row">
+                <span class="connection-number">01</span
+                ><span class="large-service cloud" aria-hidden="true"
+                  ><img src="assets/service-cloudflare.svg" alt=""
+                /></span>
+                <div>
+                  <h2>
+                    个人后台
+                    <span class="row-status" id="connection-cloud-state"
+                      >尚未安装</span
+                    >
+                  </h2>
+                  <p>运行在你自己的 Cloudflare 账户，替你接续每次聆听。</p>
+                  <small id="connection-cloud-detail"
+                    >一次安装，默认暂停，由你决定何时开始。</small
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="button secondary"
+                  data-setup="cloud"
+                >
+                  安装后台 <svg><use href="#i-arrow" /></svg>
+                </button>
+              </article>
+              <article class="connection-row">
+                <span class="connection-number">02</span
+                ><span class="large-service apple" aria-hidden="true"
+                  ><img src="assets/service-apple-music.svg" alt=""
+                /></span>
+                <div>
+                  <h2>
+                    Apple Music
+                    <span class="row-status" id="connection-apple-state"
+                      >等待连接</span
+                    >
+                  </h2>
+                  <p>从已登录的 Apple Music 网页连接你的音乐账户。</p>
+                  <small>只在你点击连接时读取所需的授权信息。</small>
+                </div>
+                <button
+                  type="button"
+                  class="button secondary"
+                  data-setup="apple"
+                >
+                  连接账户 <svg><use href="#i-arrow" /></svg>
+                </button>
+              </article>
+              <article class="connection-row">
+                <span class="connection-number">03</span
+                ><span class="large-service lastfm" aria-hidden="true"
+                  ><img src="assets/service-lastfm.png" alt=""
+                /></span>
+                <div>
+                  <h2>
+                    Last.fm
+                    <span class="row-status" id="connection-lastfm-state"
+                      >等待连接</span
+                    >
+                  </h2>
+                  <p>让最近播放的音乐，在你的 Last.fm 资料中留下记录。</p>
+                  <small id="connection-lastfm-detail"
+                    >配置应用并授权后，即可开始记录。</small
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="button secondary"
+                  data-setup="lastfm"
+                >
+                  连接账户 <svg><use href="#i-arrow" /></svg>
+                </button>
+              </article>
+            </div>
+            <div class="connection-bottom">
+              <svg aria-hidden="true"><use href="#i-info" /></svg>
+              <div class="connection-recording-info">
+                <span id="recording-status" class="quiet-status">正在读取</span>
+                <p>暂停期间的播放不会在恢复时补交。</p>
+              </div>
+              <div class="connection-actions">
+                <button
+                  id="recording-action"
+                  class="button secondary"
+                  type="button"
+                >
+                  <svg><use href="#i-arrow" /></svg><span>连接我的音乐</span>
+                </button>
+                <button
+                  id="refresh"
+                  class="icon-button"
+                  type="button"
+                  aria-label="刷新连接状态和聆听记录"
+                >
+                  <svg><use href="#i-refresh" /></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="page-settings"
+        class="page secondary-page"
+        aria-labelledby="settings-title"
+        hidden
+      >
+        <div class="page-intro compact">
+          <p class="eyebrow"><span class="tiny-line"></span> 按你的习惯</p>
+          <h1 id="settings-title">刚刚好的设置。</h1>
+          <p>一些偏好，让余音更像你的。</p>
+        </div>
+        <div class="settings-layout">
+          <div class="settings-group">
+            <h2>外观</h2>
+            <p>选择阅读聆听记录时的光线。</p>
+            <div class="theme-options" role="group" aria-label="界面外观">
+              <button
+                type="button"
+                data-theme-choice="light"
+                aria-pressed="false"
+              >
+                <span class="theme-preview light-preview"><span></span></span
+                ><span
+                  ><svg><use href="#i-sun" /></svg>浅色</span
+                ></button
+              ><button
+                type="button"
+                data-theme-choice="dark"
+                aria-pressed="false"
+              >
+                <span class="theme-preview dark-preview"><span></span></span
+                ><span
+                  ><svg><use href="#i-moon" /></svg>深色</span
+                ></button
+              ><button
+                type="button"
+                data-theme-choice="system"
+                aria-pressed="true"
+              >
+                <span class="theme-preview system-preview"><span></span></span
+                ><span
+                  ><svg><use href="#i-device" /></svg>跟随系统</span
+                >
+              </button>
+            </div>
+            <p class="form-hint" id="theme-feedback" aria-live="polite">
+              外观偏好仅保存在当前浏览器。
+            </p>
+          </div>
+          <div class="settings-group">
+            <h2>个人后台</h2>
+            <p>连接信息保存在当前浏览器，请妥善备份管理钥匙。</p>
+            <dl class="backend-details">
+              <div>
+                <dt>服务网址</dt>
+                <dd id="backend-origin">尚未安装</dd>
+              </div>
+              <div>
+                <dt>算法版本</dt>
+                <dd id="algorithm-version">0.3.111</dd>
+              </div>
+            </dl>
+            <div class="settings-actions">
+              <button
+                type="button"
+                class="button secondary"
+                id="update-backend"
+              >
+                更新个人后台 <svg><use href="#i-refresh" /></svg>
+              </button>
+              <button type="button" class="text-button" data-copy="key">
+                复制管理钥匙 <svg><use href="#i-copy" /></svg>
+              </button>
+            </div>
+            <p
+              id="settings-feedback"
+              class="form-feedback"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+        <div class="about-row">
+          <span class="brand-symbol small"
+            ><img
+              src="assets/brand-icon-128.png"
+              width="128"
+              height="128"
+              alt=""
+            />
+          </span>
+          <div>
+            <strong>余音</strong>
+            <p>Apple Music → Last.fm · 让每次聆听有回响</p>
+          </div>
+          <span class="version">扩展 0.1.0</span>
+        </div>
+      </section>
+      <div id="global-error" class="notice" role="alert" hidden>
+        <svg><use href="#i-info" /></svg>
+        <div>
+          <strong id="error-title"></strong>
+          <p id="error-detail"></p>
+        </div>
+        <button id="error-recovery" type="button" class="text-button">
+          检查状态
+        </button>
+      </div>
+    </main>
+    <footer class="app-footer">
+      <span>好音乐，自有回响。</span
+      ><span>APPLE MUSIC <span class="footer-arrow">→</span> LAST.FM</span>
+    </footer>
+    <div id="setup-scrim" class="setup-scrim" aria-hidden="true" hidden></div>
+    <dialog id="setup-sheet" class="setup-sheet" aria-labelledby="sheet-title">
+      <div class="sheet-top">
+        <span class="sheet-label" id="sheet-label">连接你的音乐</span
+        ><button
+          class="icon-button"
+          type="button"
+          id="close-sheet"
+          aria-label="关闭连接面板"
+        >
+          <svg><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <nav class="setup-progress" id="setup-progress" aria-label="连接步骤">
+        <button type="button" data-step="cloud"><span>1</span>后台</button
+        ><i></i
+        ><button type="button" data-step="apple">
+          <span>2</span>Apple Music</button
+        ><i></i
+        ><button type="button" data-step="lastfm"><span>3</span>Last.fm</button>
+      </nav>
+      <div class="sheet-heading">
+        <p class="section-kicker" id="sheet-step-label">01 / 03</p>
+        <h2 id="sheet-title" tabindex="-1">先给音乐一个落脚点。</h2>
+        <p id="sheet-description">
+          安装属于你的个人后台，之后它会替你安静地运行。
+        </p>
+      </div>
+      <section data-step-panel="cloud">
+        <div id="cloud-complete" class="completed-message" hidden>
+          <span class="success-symbol"
+            ><svg><use href="#i-check" /></svg
+          ></span>
+          <h3>个人后台已经准备好</h3>
+          <p id="cloud-origin"></p>
+          <button class="button primary" type="button" data-continue="apple">
+            继续连接 Apple Music <svg><use href="#i-arrow" /></svg>
+          </button>
+          <button
+            type="button"
+            class="text-button centered-action"
+            id="show-cloud-form"
+          >
+            重新连接 Cloudflare
+          </button>
+        </div>
+        <form id="cloud-form" novalidate>
+          <p class="cloud-explanation" id="cloud-explanation">
+            Cloudflare 是运行个人后台的平台。API
+            Token（访问令牌）是允许余音替你安装后台的凭证，下面会带你一步步创建。
+          </p>
+          <div class="cloud-guide-tools">
+            <span id="cloud-guide-intro">首次设置，从下面开始</span>
+            <button type="button" class="text-button" id="skip-token-guide">
+              我已经有 Token <svg><use href="#i-arrow" /></svg>
+            </button>
+          </div>
+          <details class="token-guide" id="cloud-token-guide" open>
+            <summary>
+              如何获取 API Token<span>跟着 Cloudflare 官网操作</span
+              ><svg><use href="#i-chevron" /></svg>
+            </summary>
+            <ol class="token-guide-steps">
+              <li>
+                <h3>登录 Cloudflare，准备个人后台的网址</h3>
+                <p>
+                  还没有账户？先在 Cloudflare 注册并验证邮箱。打开
+                  <strong>Workers &amp; Pages</strong
+                  >，选择本次要安装后台的账户；首次使用时，按页面提示完成
+                  Workers 初始化。
+                </p>
+                <p>
+                  在 <strong>Your subdomain（你的子域名）</strong>处确认已有
+                  <code>xxx.workers.dev</code
+                  >。余音会使用这个网址，不需要购买或接入域名。
+                </p>
+                <a
+                  href="https://dash.cloudflare.com/?to=/:account/workers-and-pages"
+                  target="_blank"
+                  rel="noreferrer"
+                  >打开 Workers &amp; Pages <svg><use href="#i-external" /></svg
+                ></a>
+              </li>
+              <li>
+                <h3>打开 API Tokens，创建自定义令牌</h3>
+                <p>
+                  点击下面的链接。手动查找时，入口是：右上角头像 →
+                  <strong>My Profile（我的个人资料）</strong> →
+                  <strong>API Tokens</strong>。
+                </p>
+                <a
+                  href="https://dash.cloudflare.com/profile/api-tokens"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="token-create-link"
+                  >打开 API Tokens 页面 <svg><use href="#i-external" /></svg
+                ></a>
+                <p>
+                  点击 <strong>Create Token（创建令牌）</strong>，找到
+                  <strong>Create Custom Token（自定义令牌）</strong>，点击
+                  <strong>Get started（开始使用）</strong
+                  >。名称可以填写「余音部署」。
+                </p>
+              </li>
+              <li>
+                <h3>在 Permissions 中添加这三行</h3>
+                <p>
+                  每行有三个下拉框，依次选择下表内容。用
+                  <strong>Add more（添加更多）</strong>添加下一行。
+                </p>
+                <table class="token-permissions">
+                  <caption>
+                    Permissions（权限）：类别 → 权限 → 级别
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">类别</th>
+                      <th scope="col">权限</th>
+                      <th scope="col">级别</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>帐户<span>Account</span></td>
+                      <td>Workers KV 存储<span>Workers KV Storage</span></td>
+                      <td>编辑<span>Edit</span></td>
+                    </tr>
+                    <tr>
+                      <td>帐户<span>Account</span></td>
+                      <td>Workers 脚本<span>Workers Scripts</span></td>
+                      <td>编辑<span>Edit</span></td>
+                    </tr>
+                    <tr>
+                      <td>帐户<span>Account</span></td>
+                      <td>帐户设置<span>Account Settings</span></td>
+                      <td>读取<span>Read</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="guide-note">
+                  这三行的第一项都选 Account（账户），不需要添加 Zone（区域）或
+                  DNS 权限。
+                </p>
+              </li>
+              <li>
+                <h3>把访问范围限定到你的部署账户</h3>
+                <p>
+                  找到 <strong>Account Resources（账户资源）</strong>，选择
+                  <strong>Include（包括）</strong>，再指定第 1
+                  步选择的那个账户。
+                </p>
+                <p>
+                  如果有多个账户，只选择这次安装要使用的一个。其余可选项可保留默认；如果设置有效期，确保
+                  Token 在本次安装期间有效。
+                </p>
+              </li>
+              <li>
+                <h3>生成 Token，复制完整内容</h3>
+                <p>
+                  点击
+                  <strong>Continue to summary（继续到摘要）</strong
+                  >，核对三项权限和账户，再点击 <strong>Create Token</strong>。
+                </p>
+                <p>
+                  在结果页点击 <strong>Copy（复制）</strong>。完整 Token
+                  只显示一次，请复制那一整串内容；这里需要的是 Token
+                  本身，不是名称、Account ID 或 Global API Key。
+                </p>
+              </li>
+              <li>
+                <h3 id="cloud-return-heading">回到余音，验证并安装</h3>
+                <p id="cloud-return-instruction">
+                  把 Token 粘贴到下面，点击<strong>「验证 Token」</strong
+                  >。看到部署账户后，选中与第 1
+                  步相同的账户，再点击<strong>「安装个人后台」</strong>。安装成功会进入
+                  Apple Music 连接。
+                </p>
+                <a
+                  href="https://developers.cloudflare.com/fundamentals/api/get-started/create-token/"
+                  target="_blank"
+                  rel="noreferrer"
+                  >查看 Cloudflare 官方创建说明
+                  <svg><use href="#i-external" /></svg
+                ></a>
+              </li>
+            </ol>
+          </details>
+          <div class="cloud-token-entry" id="cloud-token-entry">
+            <h3 id="cloud-entry-title">验证并安装</h3>
+            <p>已复制 Token？粘贴到这里，余音会读取你可用的部署账户。</p>
+            <label class="field-label" for="cloud-token"
+              >Cloudflare API Token</label
+            >
+            <div class="input-with-action">
+              <input
+                id="cloud-token"
+                type="password"
+                placeholder="粘贴 Cloudflare API Token"
+                autocomplete="off"
+                spellcheck="false"
+              /><button
+                class="button secondary"
+                id="load-accounts"
+                type="button"
+              >
+                验证 Token
+              </button>
+            </div>
+            <p class="form-hint" id="cloud-token-purpose">
+              Token 仅在本页内存中用于安装，不会保存。安装成功后可回 Cloudflare
+              撤销这个 Token。
+            </p>
+            <div id="cloud-account-selection" hidden>
+              <p class="cloud-token-verified" id="cloud-account-status">
+                <svg><use href="#i-check" /></svg>Token
+                已验证，接下来选择安装位置。
+              </p>
+              <label class="field-label" for="cloud-account">部署账户</label
+              ><select id="cloud-account"></select
+              ><button
+                class="button primary full-width"
+                id="deploy"
+                type="submit"
+              >
+                安装个人后台 <svg><use href="#i-arrow" /></svg>
+              </button>
+              <p class="form-hint" id="cloud-account-hint">
+                请选择刚才在 Account Resources
+                中指定的账户。安装时保持本页打开；新后台默认暂停，不会立即开始记录。
+              </p>
+            </div>
+            <div
+              class="install-progress"
+              id="install-progress"
+              role="status"
+              hidden
+            ></div>
+          </div>
+        </form>
+      </section>
+      <section data-step-panel="apple" hidden>
+        <div class="connection-illustration">
+          <span class="large-service apple" aria-hidden="true"
+            ><img src="assets/service-apple-music.svg" alt="" /></span
+          ><span class="illustration-path">·······</span
+          ><span class="large-service brand-icon" aria-hidden="true"
+            ><img
+              src="assets/brand-icon-128.png"
+              width="128"
+              height="128"
+              alt=""
+            />
+          </span>
+        </div>
+        <div class="instructions-list">
+          <div class="instruction">
+            <span>1</span>
+            <div>
+              <strong>打开 Apple Music 并登录</strong>
+              <p>在当前浏览器保留一个已登录的 Apple Music 官网标签页。</p>
+              <a
+                href="https://music.apple.com/"
+                target="_blank"
+                rel="noreferrer"
+                >打开 Apple Music <svg><use href="#i-external" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="instruction">
+            <span>2</span>
+            <div>
+              <strong>回来，完成连接</strong>
+              <p>音乐内容加载好后，点击下方按钮。无需填写 Apple ID 或密码。</p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="button primary full-width"
+          id="connect-apple"
+          type="button"
+        >
+          连接 Apple Music <svg><use href="#i-arrow" /></svg>
+        </button>
+        <div
+          id="apple-error"
+          class="sheet-error"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+          tabindex="-1"
+          hidden
+        >
+          <strong id="apple-error-title"></strong>
+          <p id="apple-error-detail"></p>
+          <button
+            id="apple-error-recovery"
+            class="text-button"
+            type="button"
+            hidden
+          >
+            检查当前状态
+          </button>
+          <a
+            id="apple-error-open"
+            class="text-button"
+            href="https://music.apple.com/"
+            target="_blank"
+            rel="noreferrer"
+            >打开 Apple Music <svg><use href="#i-external" /></svg
+          ></a>
+        </div>
+        <p class="form-hint centered" id="apple-panel-status">
+          只读取连接所需的音乐授权信息。
+        </p>
+        <button
+          class="text-button centered-action"
+          type="button"
+          data-continue="lastfm"
+          id="apple-continue"
+          hidden
+        >
+          继续连接 Last.fm <svg><use href="#i-arrow" /></svg>
+        </button>
+      </section>
+      <section data-step-panel="lastfm" hidden>
+        <div id="lastfm-complete" class="completed-message" hidden>
+          <span class="success-symbol"
+            ><svg><use href="#i-check" /></svg
+          ></span>
+          <h3 id="lastfm-complete-title">Last.fm 已连接</h3>
+          <p id="connected-lastfm-user"></p>
+          <button
+            type="button"
+            class="button primary"
+            id="start-recording-lastfm"
+          >
+            开始自动记录 <svg><use href="#i-arrow" /></svg></button
+          ><button
+            class="text-button centered-action"
+            id="reconfigure-lastfm"
+            type="button"
+          >
+            重新配置应用
+          </button>
+        </div>
+        <div id="lastfm-configuration">
+          <div class="instruction" id="lastfm-application-guide">
+            <span>1</span>
+            <div>
+              <strong>创建自己的 Last.fm 应用</strong>
+              <p>在官网申请 API Key 与 Shared Secret，并填写以下网址。</p>
+              <a
+                href="https://www.last.fm/api/account/create"
+                target="_blank"
+                rel="noreferrer"
+                >创建 Last.fm 应用 <svg><use href="#i-external" /></svg
+              ></a>
+            </div>
+          </div>
+          <div class="copy-fields" id="lastfm-application-urls">
+            <div>
+              <span>Homepage</span
+              ><code id="lastfm-homepage">先安装个人后台</code
+              ><button
+                type="button"
+                data-copy="homepage"
+                class="icon-button"
+                aria-label="复制 Last.fm Homepage"
+              >
+                <svg><use href="#i-copy" /></svg>
+              </button>
+            </div>
+            <div>
+              <span>Callback URL</span
+              ><code id="lastfm-callback">先安装个人后台</code
+              ><button
+                type="button"
+                data-copy="callback"
+                class="icon-button"
+                aria-label="复制 Last.fm Callback URL"
+              >
+                <svg><use href="#i-copy" /></svg>
+              </button>
+            </div>
+          </div>
+          <form id="lastfm-form" novalidate>
+            <label class="field-label" for="lastfm-key">API Key</label
+            ><input
+              id="lastfm-key"
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="32 位 API Key"
+            /><label class="field-label" for="lastfm-secret"
+              >Shared Secret</label
+            ><input
+              id="lastfm-secret"
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="32 位 Shared Secret"
+            /><button
+              class="button secondary full-width"
+              type="submit"
+              id="save-lastfm"
+            >
+              保存应用配置
+            </button>
+          </form>
+          <div class="instruction authorization-instruction">
+            <span id="lastfm-authorization-number">2</span>
+            <div>
+              <strong id="lastfm-authorization-title"
+                >允许 Last.fm 账户连接</strong
+              >
+              <p id="lastfm-authorization-description">
+                保存应用后，前往 Last.fm
+                官网同意连接。完成后会自动回到余音，即可开始记录。
+              </p>
+            </div>
+          </div>
+          <div class="authorization-actions">
+            <button type="button" class="button primary" id="authorize-lastfm">
+              前往 Last.fm 授权 <svg><use href="#i-external" /></svg>
+            </button>
+          </div>
+          <button
+            type="button"
+            class="text-button centered-action"
+            id="check-authorization"
+          >
+            已完成授权，检查连接 <svg><use href="#i-refresh" /></svg>
+          </button>
+          <button
+            type="button"
+            class="text-button centered-action"
+            id="reconfigure-lastfm-recovery"
+            hidden
+          >
+            重新配置应用
+          </button>
+        </div>
+      </section>
+      <section data-step-panel="confirm" hidden>
+        <div class="connection-illustration">
+          <span class="large-service apple" aria-hidden="true"
+            ><img src="assets/service-apple-music.svg" alt="" /></span
+          ><span class="illustration-path">·······</span
+          ><span class="large-service lastfm" aria-hidden="true"
+            ><img src="assets/service-lastfm.png" alt=""
+          /></span>
+        </div>
+        <div class="recording-account">
+          <span>已连接的 Last.fm 账户</span
+          ><strong id="confirm-username">尚未连接 Last.fm</strong>
+        </div>
+        <div id="recording-start-controls">
+          <button
+            type="button"
+            class="button primary full-width"
+            id="start-recording"
+            disabled
+          >
+            开始自动记录 <svg><use href="#i-arrow" /></svg>
+          </button>
+          <p class="form-hint centered">
+            从开启后的新播放开始。你随时可以暂停。
+          </p>
+        </div>
+        <div id="recording-pause-controls" hidden>
+          <button
+            type="button"
+            class="button primary full-width"
+            id="pause-recording"
+          >
+            <svg aria-hidden="true"><use href="#i-pause" /></svg>暂停记录
+          </button>
+          <p class="form-hint centered">
+            暂停后不再提交新的播放，已记录的音乐会保留。
+          </p>
+        </div>
+      </section>
+      <div id="sheet-error" class="sheet-error" role="alert" hidden>
+        <strong></strong>
+        <p></p>
+        <button class="text-button" type="button" id="sheet-recovery">
+          检查当前状态
+        </button>
+      </div>
+      <p id="sheet-feedback" class="form-feedback" aria-live="polite"></p>
+      <div class="sheet-footer">
+        <svg><use href="#i-cloud" /></svg
+        ><span>你的账户，你的后台。每一步由你决定。</span>
+      </div>
+    </dialog>
+    <div id="toast" class="toast" role="status" hidden>
+      <svg><use href="#i-check" /></svg><span></span>
+    </div>
+  </body>
+</html>

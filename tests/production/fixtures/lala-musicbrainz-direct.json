@@ -1,0 +1,1576 @@
+[
+  {
+    "body": {
+      "country": null,
+      "title": "是日救星演唱会Live",
+      "release-group": {
+        "id": "f4f75aa9-d2b5-480f-a538-bedae3dc7562",
+        "artist-credit": [
+          {
+            "name": "徐佳瑩",
+            "joinphrase": "",
+            "artist": {
+              "name": "徐佳瑩",
+              "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+              "type": "Person",
+              "country": "TW",
+              "sort-name": "Hsu, LaLa",
+              "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+              "disambiguation": ""
+            }
+          }
+        ],
+        "first-release-date": "2019-12",
+        "secondary-type-ids": [
+          "dd2a21e1-0c00-3729-a7a0-de60b84eb5d1"
+        ],
+        "primary-type-id": "f529b476-6e62-324f-b0aa-1f3e33d313fc",
+        "primary-type": "Album",
+        "disambiguation": "",
+        "title": "是日救星演唱会Live",
+        "secondary-types": [
+          "Compilation"
+        ]
+      },
+      "date": "2019-12",
+      "text-representation": {
+        "script": "Hans",
+        "language": "zho"
+      },
+      "media": [
+        {
+          "tracks": [
+            {
+              "artist-credit": [
+                {
+                  "artist": {
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "0e136c4a-7c88-42d3-a560-d9b1c6b9b9e7",
+              "recording": {
+                "video": false,
+                "disambiguation": "",
+                "length": 253596,
+                "title": "是日救星",
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type": "Person"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "f97e8e89-0298-4c22-bf03-3ca932666755"
+              },
+              "title": "是日救星",
+              "number": "1",
+              "length": 253596,
+              "position": 1
+            },
+            {
+              "recording": {
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type": "Person",
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                    }
+                  }
+                ],
+                "id": "5f457c60-e822-425c-9a7c-19a7ef487be3",
+                "first-release-date": "2019-12",
+                "disambiguation": "",
+                "length": 251315,
+                "title": "圆舞曲",
+                "video": false
+              },
+              "id": "650c37fc-ecba-4089-bc3d-3ed700bfa204",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "title": "圆舞曲",
+              "number": "2",
+              "length": 251315,
+              "position": 2
+            },
+            {
+              "title": "辣椒",
+              "number": "3",
+              "length": 225868,
+              "position": 3,
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type": "Person"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "aaaa8176-4925-46d8-a8bc-28bdc968a949",
+              "recording": {
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type": "Person",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": ""
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "469ffa44-1825-4773-88a2-cd6929c46bbf",
+                "first-release-date": "2019-12",
+                "video": false,
+                "title": "辣椒",
+                "length": 225868,
+                "disambiguation": ""
+              }
+            },
+            {
+              "position": 4,
+              "title": "极限",
+              "length": 272189,
+              "number": "4",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type": "Person"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "71d1b4b4-697c-4080-be65-d0ea7a7d5ae9",
+              "recording": {
+                "length": 272189,
+                "disambiguation": "",
+                "title": "极限",
+                "video": false,
+                "first-release-date": "2019-12",
+                "id": "8069143c-6f81-4e3f-85a2-dd1314714daa",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ]
+              }
+            },
+            {
+              "position": 5,
+              "length": 303504,
+              "title": "不痛",
+              "number": "5",
+              "id": "2c8666f1-5abe-47d7-928c-c262283e9d9d",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa"
+                  }
+                }
+              ],
+              "recording": {
+                "video": false,
+                "length": 303504,
+                "title": "不痛",
+                "disambiguation": "",
+                "first-release-date": "2019-12",
+                "id": "7107eba6-f7c3-4352-9d66-3b15f6cfc7c5",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "recording": {
+                "video": false,
+                "disambiguation": "",
+                "length": 292685,
+                "title": "惧高症",
+                "id": "426d8d9f-52ac-4125-b076-1d6080f9323f",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "first-release-date": "2019-12"
+              },
+              "id": "4e15c31d-0648-4826-8389-db6277a4b386",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  }
+                }
+              ],
+              "title": "惧高症",
+              "length": 292685,
+              "number": "6",
+              "position": 6
+            },
+            {
+              "position": 7,
+              "title": "出口",
+              "number": "7",
+              "length": 179660,
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "type": "Person",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                  }
+                }
+              ],
+              "id": "92b8232a-1627-49dd-b22a-b6a4555a5cff",
+              "recording": {
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "9d9b70cf-d36b-49c9-8fab-cf7f9089e3b4",
+                "first-release-date": "2019-12",
+                "title": "出口",
+                "length": 179660,
+                "disambiguation": "",
+                "video": false
+              }
+            },
+            {
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type": "Person",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": ""
+                  }
+                }
+              ],
+              "id": "71bfd59f-d716-4979-93b4-635cc01320b5",
+              "recording": {
+                "id": "7d995fbb-f91f-41e7-9e4f-9b1e70e6e3c8",
+                "artist-credit": [
+                  {
+                    "joinphrase": "",
+                    "name": "徐佳瑩",
+                    "artist": {
+                      "type": "Person",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    }
+                  }
+                ],
+                "first-release-date": "2019-12",
+                "disambiguation": "",
+                "length": 205958,
+                "title": "儿歌",
+                "video": false
+              },
+              "length": 205958,
+              "title": "儿歌",
+              "number": "8",
+              "position": 8
+            },
+            {
+              "recording": {
+                "artist-credit": [
+                  {
+                    "joinphrase": "",
+                    "name": "徐佳瑩",
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": ""
+                    }
+                  }
+                ],
+                "id": "9ddaf4f8-5654-42a6-a74e-92af1a404e1a",
+                "first-release-date": "2019-12",
+                "video": false,
+                "title": "哼情歌",
+                "length": 223489,
+                "disambiguation": ""
+              },
+              "id": "8343d71c-6d6d-48c6-bb53-186b967479c9",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  },
+                  "joinphrase": "",
+                  "name": "徐佳瑩"
+                }
+              ],
+              "title": "哼情歌",
+              "length": 223489,
+              "number": "9",
+              "position": 9
+            },
+            {
+              "position": 10,
+              "title": "明天的事情",
+              "number": "10",
+              "length": 279341,
+              "id": "ae9f603f-d247-4cb9-ac00-61ec9a808407",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "recording": {
+                "id": "1f162ba3-0894-42c0-9399-39831ab8abc7",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "type": "Person",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": ""
+                    }
+                  }
+                ],
+                "first-release-date": "2019-12",
+                "disambiguation": "",
+                "length": 279341,
+                "title": "明天的事情",
+                "video": false
+              }
+            },
+            {
+              "position": 11,
+              "title": "寻人启事",
+              "length": 280282,
+              "number": "11",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  }
+                }
+              ],
+              "id": "6e7063d7-6b50-4191-8e37-fb29961a5b29",
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "c3801b4e-4b4f-4556-9127-a4bebb56aace",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "video": false,
+                "length": 280282,
+                "disambiguation": "",
+                "title": "寻人启事"
+              }
+            },
+            {
+              "number": "12",
+              "title": "不安小姐",
+              "length": 217035,
+              "position": 12,
+              "recording": {
+                "video": false,
+                "length": 217035,
+                "title": "不安小姐",
+                "disambiguation": "",
+                "first-release-date": "2019-12",
+                "id": "f9375146-6aba-4962-a4fc-91cc0baf0637",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type": "Person"
+                    }
+                  }
+                ]
+              },
+              "id": "3690bdac-3e9c-40de-8212-6aaf284fc59e",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type": "Person",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  },
+                  "joinphrase": "",
+                  "name": "徐佳瑩"
+                }
+              ]
+            },
+            {
+              "position": 13,
+              "length": 249952,
+              "title": "现在不跳舞要干嘛",
+              "number": "13",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type": "Person"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "09de7d3a-a9e1-43cb-8de2-acc6e4bd84ee",
+              "recording": {
+                "id": "6d894bf8-1189-4664-92d6-a7bc020ca8af",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "first-release-date": "2019-12",
+                "length": 249952,
+                "title": "现在不跳舞要干嘛",
+                "disambiguation": "",
+                "video": false
+              }
+            },
+            {
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type": "Person",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "747d2273-1986-48f9-8e30-261e9086fee4",
+              "recording": {
+                "video": false,
+                "length": 255551,
+                "disambiguation": "",
+                "title": "拉拉队",
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "id": "288ee1a8-af36-4485-95e4-181069689e2c"
+              },
+              "position": 14,
+              "number": "14",
+              "title": "拉拉队",
+              "length": 255551
+            },
+            {
+              "title": "树枝孤鸟",
+              "number": "15",
+              "length": 392782,
+              "position": 15,
+              "id": "b80c1f08-079a-4c7c-a372-acb3575ff729",
+              "artist-credit": [
+                {
+                  "joinphrase": " & ",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  }
+                },
+                {
+                  "artist": {
+                    "id": "0e1610be-a8cb-452c-953d-72aa3d95b90e",
+                    "name": "伍佰",
+                    "sort-name": "Wu Bai",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  },
+                  "joinphrase": "",
+                  "name": "伍佰"
+                }
+              ],
+              "recording": {
+                "video": false,
+                "length": 392782,
+                "title": "树枝孤鸟",
+                "disambiguation": "",
+                "id": "5bf6c5da-bacf-4865-925f-564ea7d543b0",
+                "artist-credit": [
+                  {
+                    "joinphrase": " & ",
+                    "name": "徐佳瑩",
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person"
+                    }
+                  },
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "sort-name": "Wu Bai",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "name": "伍佰",
+                      "id": "0e1610be-a8cb-452c-953d-72aa3d95b90e"
+                    },
+                    "joinphrase": "",
+                    "name": "伍佰"
+                  }
+                ],
+                "first-release-date": "2019-12"
+              }
+            },
+            {
+              "artist-credit": [
+                {
+                  "joinphrase": " & ",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "type": "Person",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                  }
+                },
+                {
+                  "artist": {
+                    "name": "伍佰",
+                    "id": "0e1610be-a8cb-452c-953d-72aa3d95b90e",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "country": "TW",
+                    "sort-name": "Wu Bai",
+                    "type": "Person"
+                  },
+                  "joinphrase": "",
+                  "name": "伍佰"
+                }
+              ],
+              "id": "28af638d-b8a7-44f3-82a1-145a91fa85f0",
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "172c514f-953f-4bdf-997d-72a81355afb4",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type": "Person",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": " & "
+                  },
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Wu Bai",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "name": "伍佰",
+                      "id": "0e1610be-a8cb-452c-953d-72aa3d95b90e"
+                    },
+                    "name": "伍佰",
+                    "joinphrase": ""
+                  }
+                ],
+                "length": 285549,
+                "title": "被动",
+                "disambiguation": "",
+                "video": false
+              },
+              "position": 16,
+              "number": "16",
+              "title": "被动",
+              "length": 285549
+            }
+          ],
+          "position": 1,
+          "title": "",
+          "format-id": "9712d52a-4509-3d4b-a1a2-67c88c643e31",
+          "track-offset": 0,
+          "format": "CD",
+          "id": "edd239e1-8ea9-3b0e-8c97-87b325423493",
+          "track-count": 16
+        },
+        {
+          "format-id": "9712d52a-4509-3d4b-a1a2-67c88c643e31",
+          "format": "CD",
+          "track-offset": 0,
+          "id": "84d46a4d-5f4b-336b-b163-ae265b84288e",
+          "track-count": 15,
+          "tracks": [
+            {
+              "title": "失落沙洲",
+              "length": 304775,
+              "number": "1",
+              "position": 1,
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type": "Person",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": ""
+                  }
+                }
+              ],
+              "id": "0fea60b4-4462-4a90-ac81-17e1bce871c6",
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "aaba9faa-310b-4d7c-8934-212fcd69fa4d",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "video": false,
+                "title": "失落沙洲",
+                "length": 304775,
+                "disambiguation": ""
+              }
+            },
+            {
+              "id": "ed021966-2631-49b3-abb5-c116317faf7f",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df"
+                  }
+                }
+              ],
+              "recording": {
+                "title": "浪费",
+                "length": 324074,
+                "disambiguation": "",
+                "video": false,
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "type": "Person",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "id": "446f3872-2902-47d8-bc6d-277810b8263a",
+                "first-release-date": "2019-12"
+              },
+              "length": 324074,
+              "title": "浪费",
+              "number": "2",
+              "position": 2
+            },
+            {
+              "recording": {
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type": "Person",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "d13b1334-eac0-4830-a952-d7660e24b12b",
+                "first-release-date": "2019-12",
+                "video": false,
+                "length": 284849,
+                "disambiguation": "",
+                "title": "不难"
+              },
+              "id": "988d9a7a-32c8-4bf5-89a0-952d5e636d1c",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "position": 3,
+              "title": "不难",
+              "length": 284849,
+              "number": "3"
+            },
+            {
+              "id": "45e82298-c3dc-4c01-ac4f-2f75d68ac59b",
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type": "Person"
+                  }
+                }
+              ],
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "0d1f1272-8217-4701-95a0-15d830359bc8",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    }
+                  }
+                ],
+                "video": false,
+                "title": "修炼爱情",
+                "length": 281940,
+                "disambiguation": ""
+              },
+              "position": 4,
+              "title": "修炼爱情",
+              "length": 281940,
+              "number": "4"
+            },
+            {
+              "length": 270522,
+              "title": "记得带走",
+              "number": "5",
+              "position": 5,
+              "id": "6238aa87-1915-4bbb-9480-d8915e2e486a",
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "type": "Person",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  }
+                }
+              ],
+              "recording": {
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type": "Person",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "id": "88753db5-9fec-4470-9e68-dcb45a250586",
+                "first-release-date": "2019-12",
+                "video": false,
+                "length": 270522,
+                "title": "记得带走",
+                "disambiguation": ""
+              }
+            },
+            {
+              "title": "身骑白马",
+              "length": 315677,
+              "number": "6",
+              "position": 6,
+              "recording": {
+                "length": 315677,
+                "title": "身骑白马",
+                "disambiguation": "",
+                "video": false,
+                "artist-credit": [
+                  {
+                    "joinphrase": "",
+                    "name": "徐佳瑩",
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": ""
+                    }
+                  }
+                ],
+                "id": "bbc629cf-1fd8-478d-a776-df9cc494abbf",
+                "first-release-date": "2019-12"
+              },
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa"
+                  }
+                }
+              ],
+              "id": "a07cba9f-005c-4b4c-ad43-fe202c0b756f"
+            },
+            {
+              "recording": {
+                "length": 225073,
+                "disambiguation": "",
+                "title": "你敢不敢",
+                "video": false,
+                "id": "af1dfa38-41f8-48cd-92e2-650e09a9e653",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "type": "Person"
+                    }
+                  }
+                ],
+                "first-release-date": "2019-12"
+              },
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "type": "Person",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": ""
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "id": "93ad29b2-1ec8-455e-a344-f1e4881eb85e",
+              "length": 225073,
+              "title": "你敢不敢",
+              "number": "7",
+              "position": 7
+            },
+            {
+              "title": "突然好想你",
+              "number": "8",
+              "length": 276526,
+              "position": 8,
+              "recording": {
+                "title": "突然好想你",
+                "length": 276526,
+                "disambiguation": "",
+                "video": false,
+                "artist-credit": [
+                  {
+                    "joinphrase": "",
+                    "name": "徐佳瑩",
+                    "artist": {
+                      "type": "Person",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    }
+                  }
+                ],
+                "id": "d01ee6f9-11f6-4bca-b00c-8c27eb282198",
+                "first-release-date": "2019-12"
+              },
+              "artist-credit": [
+                {
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  },
+                  "joinphrase": "",
+                  "name": "徐佳瑩"
+                }
+              ],
+              "id": "78a828d9-f08b-4545-8884-dfdfcc463773"
+            },
+            {
+              "recording": {
+                "video": false,
+                "length": 221242,
+                "disambiguation": "",
+                "title": "到此为止",
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type": "Person",
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                    }
+                  }
+                ],
+                "id": "3821d9aa-612d-4208-969b-f31be69b207a"
+              },
+              "id": "2d2c6b0f-bd4e-4335-9ac6-14f4faa7fed4",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "type": "Person",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  }
+                }
+              ],
+              "position": 9,
+              "title": "到此为止",
+              "length": 221242,
+              "number": "9"
+            },
+            {
+              "recording": {
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "name": "徐佳瑩",
+                    "joinphrase": "",
+                    "artist": {
+                      "name": "徐佳瑩",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "sort-name": "Hsu, LaLa",
+                      "country": "TW",
+                      "type": "Person"
+                    }
+                  }
+                ],
+                "id": "a7a721fd-6730-46a0-9add-1faba7fda9db",
+                "video": false,
+                "length": 254769,
+                "title": "香水",
+                "disambiguation": ""
+              },
+              "id": "7348f9d9-a14d-4a16-93c8-e57b01f4684c",
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  }
+                }
+              ],
+              "position": 10,
+              "length": 254769,
+              "title": "香水",
+              "number": "10"
+            },
+            {
+              "id": "d68d73f3-6682-411d-a14b-08fc6f688bee",
+              "artist-credit": [
+                {
+                  "artist": {
+                    "type": "Person",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c"
+                  },
+                  "name": "徐佳瑩",
+                  "joinphrase": ""
+                }
+              ],
+              "recording": {
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person"
+                    },
+                    "name": "徐佳瑩",
+                    "joinphrase": ""
+                  }
+                ],
+                "id": "744cf235-c644-496c-b948-83f45470d345",
+                "video": false,
+                "disambiguation": "",
+                "length": 248164,
+                "title": "病人"
+              },
+              "position": 11,
+              "length": 248164,
+              "title": "病人",
+              "number": "11"
+            },
+            {
+              "id": "8df4dbc0-ad79-4b55-bd67-365a6d56de31",
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "name": "徐佳瑩",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "sort-name": "Hsu, LaLa",
+                    "country": "TW",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "type": "Person"
+                  }
+                }
+              ],
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "3a86c0e1-17eb-4bd0-8200-b3d086e7ebe3",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "type": "Person"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "disambiguation": "",
+                "length": 408773,
+                "title": "现在不跳舞要干嘛（2018）",
+                "video": false
+              },
+              "length": 408773,
+              "title": "现在不跳舞要干嘛（2018）",
+              "number": "12",
+              "position": 12
+            },
+            {
+              "id": "87d80ba9-c50b-4f26-8e03-2d3efefbf136",
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": " & ",
+                  "artist": {
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩",
+                    "type": "Person",
+                    "disambiguation": "",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa"
+                  }
+                },
+                {
+                  "joinphrase": "",
+                  "name": "頑童MJ116",
+                  "artist": {
+                    "name": "頑童MJ116",
+                    "id": "5fbab346-06f9-4b98-a916-02d08ebb7257",
+                    "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+                    "disambiguation": "",
+                    "sort-name": "頑童MJ116",
+                    "country": "TW",
+                    "type": "Group"
+                  }
+                }
+              ],
+              "recording": {
+                "first-release-date": "2019-12",
+                "id": "3818178a-bd17-45f4-a91f-cdb62be07b5e",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩",
+                      "type": "Person",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "disambiguation": "",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df"
+                    },
+                    "joinphrase": " & ",
+                    "name": "徐佳瑩"
+                  },
+                  {
+                    "name": "頑童MJ116",
+                    "joinphrase": "",
+                    "artist": {
+                      "type": "Group",
+                      "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "頑童MJ116",
+                      "id": "5fbab346-06f9-4b98-a916-02d08ebb7257",
+                      "name": "頑童MJ116"
+                    }
+                  }
+                ],
+                "length": 320703,
+                "disambiguation": "",
+                "title": "傲娇+辣台妹",
+                "video": false
+              },
+              "position": 13,
+              "length": 320703,
+              "title": "傲娇+辣台妹",
+              "number": "13"
+            },
+            {
+              "id": "81d2e8e2-d6bf-4925-b63b-d93e2f0ed6aa",
+              "artist-credit": [
+                {
+                  "name": "徐佳瑩",
+                  "joinphrase": "",
+                  "artist": {
+                    "type": "Person",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  }
+                }
+              ],
+              "recording": {
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "type": "Person",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "c5d24717-f6df-40fe-a93c-c4ecda0c2261",
+                "first-release-date": "2019-12",
+                "disambiguation": "",
+                "length": 355479,
+                "title": "灰色",
+                "video": false
+              },
+              "title": "灰色",
+              "length": 355479,
+              "number": "14",
+              "position": 14
+            },
+            {
+              "artist-credit": [
+                {
+                  "joinphrase": "",
+                  "name": "徐佳瑩",
+                  "artist": {
+                    "type": "Person",
+                    "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                    "disambiguation": "",
+                    "country": "TW",
+                    "sort-name": "Hsu, LaLa",
+                    "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                    "name": "徐佳瑩"
+                  }
+                }
+              ],
+              "id": "a2ca5bb1-014b-4796-983f-97e2f1a76d87",
+              "recording": {
+                "length": 305239,
+                "title": "心里学",
+                "disambiguation": "",
+                "video": false,
+                "first-release-date": "2019-12",
+                "artist-credit": [
+                  {
+                    "artist": {
+                      "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+                      "disambiguation": "",
+                      "country": "TW",
+                      "sort-name": "Hsu, LaLa",
+                      "type": "Person",
+                      "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+                      "name": "徐佳瑩"
+                    },
+                    "joinphrase": "",
+                    "name": "徐佳瑩"
+                  }
+                ],
+                "id": "ce12b6ad-4f85-4a45-bf8a-8b638df10ca4"
+              },
+              "number": "15",
+              "title": "心里学",
+              "length": 305239,
+              "position": 15
+            }
+          ],
+          "position": 2,
+          "title": ""
+        }
+      ],
+      "packaging-id": null,
+      "id": "f6b2bd9e-0e4c-4bbf-a630-592c4171800e",
+      "artist-credit": [
+        {
+          "joinphrase": "",
+          "name": "徐佳瑩",
+          "artist": {
+            "sort-name": "Hsu, LaLa",
+            "country": "TW",
+            "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+            "disambiguation": "",
+            "type": "Person",
+            "id": "a47ac8f5-6774-4540-842f-f1eb0a19845c",
+            "name": "徐佳瑩"
+          }
+        }
+      ],
+      "cover-art-archive": {
+        "front": true,
+        "count": 2,
+        "darkened": false,
+        "artwork": true,
+        "back": false
+      },
+      "disambiguation": "",
+      "asin": null,
+      "barcode": null,
+      "quality": "normal",
+      "packaging": null,
+      "release-events": [
+        {
+          "area": null,
+          "date": "2019-12"
+        }
+      ],
+      "status-id": "4e304316-386d-3409-af2e-78857eec5cfe",
+      "status": "Official"
+    }
+  }
+]

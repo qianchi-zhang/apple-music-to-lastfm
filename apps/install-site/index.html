@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>开始使用 · Apple Music Scrobbler</title>
+    <link rel="icon" type="image/png" href="assets/brand-icon-32.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="guide.js" defer></script>
+    <script src="wizard.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="#prepare"
+        ><img src="assets/brand-icon-64.png" alt="" /><span
+          >APPLE MUSIC SCROBBLER</span
+        ></a
+      >
+      <span class="tag">完整 Chrome 扩展 · 安装指南</span>
+    </header>
+    <main>
+      <div class="intro">
+        <div>
+          <p class="eyebrow">APPLE MUSIC → LAST.FM</p>
+          <h1>让听过的歌，<br />有迹可循。</h1>
+          <p class="lead">
+            安装完整扩展，在扩展里一步步连接服务。<br />记录运行在你自己的
+            Cloudflare，电脑关机也能继续。
+          </p>
+          <a class="button" href="browser-extension.zip" download
+            >↓ 下载完整扩展</a
+          >
+          <a class="text-link" href="#prepare">查看安装步骤</a>
+        </div>
+        <div class="flow-card">
+          <img class="record-glyph" src="assets/brand-icon-128.png" alt="" />
+          <strong>一次设置，自动记录</strong>
+          <p>安装扩展 <span>→</span> 连接服务 <span>→</span> 开始记录</p>
+          <small
+            >无需 Mac App · 无需 npm 或命令行<br />服务使用你自己的 Cloudflare
+            和 Last.fm 账户</small
+          >
+        </div>
+      </div>
+      <div class="wizard-layout">
+        <nav aria-label="使用指南">
+          <span class="nav-caption">开始使用</span>
+          <a href="#prepare"
+            ><span>01</span>
+            <div>安装完整扩展<small>下载、解压并加载</small></div></a
+          >
+          <a href="#connect"
+            ><span>02</span>
+            <div>在扩展连接服务<small>部署、授权与开始记录</small></div></a
+          >
+          <a href="#help"
+            ><span>03</span>
+            <div>遇到问题<small>找到对应步骤，继续设置</small></div></a
+          >
+          <a href="#existing"
+            ><span>↗</span>
+            <div>已有个人后台<small>直接打开自己的控制台</small></div></a
+          >
+          <p class="nav-note">
+            这是静态安装指南。实际连接状态请在扩展查看；本页不会收取密钥或验证账户。
+          </p>
+        </nav>
+        <div class="panels">
+          <section id="prepare" aria-labelledby="prepare-title">
+            <span class="eyebrow">01 / 安装完整扩展</span>
+            <h2 id="prepare-title">先把扩展装进 Chrome</h2>
+            <p>
+              扩展包含完整设置向导：部署 Cloudflare、连接 Apple Music 和
+              Last.fm、开启记录。所有账户设置都在扩展和对应官方网站完成。
+            </p>
+            <a class="button" href="browser-extension.zip" download
+              >↓ 下载完整扩展</a
+            >
+            <p class="note">
+              当前为开发预览，未上架商店，需要手动加载一次。macOS
+              已验证，Windows 尚待实机验证。
+            </p>
+            <div class="instruction">
+              <span>1</span>
+              <div>
+                <h3>下载并解压</h3>
+                <p>
+                  解压 ZIP，找到包含 <code>manifest.json</code> 的
+                  <code>browser-extension</code>
+                  文件夹。安装后请保留这个文件夹。
+                </p>
+              </div>
+            </div>
+            <div class="instruction">
+              <span>2</span>
+              <div>
+                <h3>打开扩展管理页面</h3>
+                <p>
+                  在 Chrome 地址栏输入
+                  <code>chrome://extensions</code>，打开右上角的「开发者模式」。
+                </p>
+                <button
+                  class="secondary"
+                  id="copy-extensions-url"
+                  type="button"
+                >
+                  复制扩展管理地址
+                </button>
+                <p id="copy-status" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="instruction">
+              <span>3</span>
+              <div>
+                <h3>加载并打开完整扩展</h3>
+                <p>
+                  点击「加载已解压的扩展程序」，选择刚才的文件夹。点击浏览器右上角拼图图标，找到
+                  <strong>Apple Music Scrobbler</strong
+                  >，点击它打开设置页面；也可以固定到工具栏方便下次打开。
+                </p>
+              </div>
+            </div>
+            <details>
+              <summary>找不到文件夹或加载失败？</summary>
+              <p>
+                选择解压后的文件夹，而不是 ZIP；文件夹内应直接包含
+                manifest.json。若下载来自 GitHub
+                Actions，请先解压外层归档，再解压其中的扩展
+                ZIP。企业管理的浏览器可能限制安装，需要联系浏览器管理员。
+              </p>
+            </details>
+            <div class="step-actions">
+              <a class="button" href="#connect">已安装，查看接下来的步骤 →</a>
+            </div>
+          </section>
+          <section id="connect" aria-labelledby="connect-title">
+            <span class="eyebrow">02 / 回到扩展完成设置</span>
+            <h2 id="connect-title">接下来的操作，都在扩展里</h2>
+            <p>
+              点击 Chrome 工具栏里的 Apple Music Scrobbler
+              图标，打开完整扩展。按设置向导完成下面四步；本网页不需要填写任何凭据。
+            </p>
+            <div class="instruction">
+              <span>1</span>
+              <div>
+                <h3>部署个人 Cloudflare 后台</h3>
+                <p>
+                  使用自己的 Cloudflare 账户，跟随扩展创建临时 API
+                  Token，选择账户后部署。扩展会创建个人后台并生成管理钥匙，请按提示备份。不需要
+                  GitHub、npm 或终端。
+                </p>
+              </div>
+            </div>
+            <div class="instruction">
+              <span>2</span>
+              <div>
+                <h3>连接 Apple Music</h3>
+                <p>
+                  在同一 Chrome 登录 Apple Music
+                  官网，然后回到扩展点击连接并允许所需站点权限。密码只在 Apple
+                  官网输入；不需要 Apple 开发者账户。
+                </p>
+              </div>
+            </div>
+            <div class="instruction">
+              <span>3</span>
+              <div>
+                <h3>连接 Last.fm</h3>
+                <p>
+                  按扩展引导创建自己的 Last.fm API 应用，把 API Key 和 Shared
+                  Secret 填回扩展。打开个人后台完成 Last.fm
+                  官方授权，确认显示的是你要记录到的用户名。
+                </p>
+              </div>
+            </div>
+            <div class="instruction">
+              <span>4</span>
+              <div>
+                <h3>开启记录，再播放新歌</h3>
+                <p>
+                  在扩展刷新状态，确认账户连接成功后点击「开始自动记录」。等开启成功再正常播放一首新歌。首次开启会建立基线，不会补传已有历史。
+                </p>
+              </div>
+            </div>
+            <p class="notice">
+              Cloudflare 和 Last.fm 需要各自的账户及一次应用设置，不是仅登录
+              Apple Music 即可完成。遇到错误时，按扩展当前步骤的提示处理。
+            </p>
+            <p>
+              后台目标检查间隔为 3 分钟，还需等待 Apple
+              播放历史更新和歌曲识别。关闭网页或扩展页面不影响已开启的后台；以后点扩展图标查看最近记录。
+            </p>
+            <div class="step-actions">
+              <a class="text-link" href="#prepare">← 返回安装步骤</a
+              ><a class="button secondary" href="#help"
+                >遇到问题，查看解决办法 →</a
+              >
+            </div>
+          </section>
+          <section id="help" aria-labelledby="help-title">
+            <span class="eyebrow">03 / 遇到问题</span>
+            <h2 id="help-title">从出错的那一步继续</h2>
+            <p>
+              先在扩展查看当前步骤和错误文字。不要为了重试反复创建后台、清除扩展数据或切换开始／暂停。
+            </p>
+            <details open>
+              <summary>找不到扩展设置页面</summary>
+              <p>
+                点击 Chrome 右上角拼图图标，再点击 Apple Music
+                Scrobbler。如果列表里没有，请回到「安装完整扩展」检查是否加载成功。
+              </p>
+              <a href="#prepare">返回安装步骤 →</a>
+            </details>
+            <details>
+              <summary>Cloudflare 部署失败或中断</summary>
+              <p>
+                保留原账户和扩展数据，检查 Token
+                的有效期及扩展要求的权限，再回到同一步继续。若缺少 workers.dev
+                子域名，先按扩展提示在 Cloudflare
+                设置。不要反复新建副本；管理钥匙请妥善备份。
+              </p>
+            </details>
+            <details>
+              <summary>Apple Music 找不到账户或连接失效</summary>
+              <p>
+                确认在同一 Chrome 登录了 music.apple.com，保留一个已登录的 Apple
+                Music 标签页，再回扩展重试连接。按 Chrome 提示允许扩展访问 Apple
+                Music 和自己的后台，无需重新部署。
+              </p>
+            </details>
+            <details>
+              <summary>Last.fm 未连接或授权中断</summary>
+              <p>
+                检查应用回调地址、API Key 和 Shared Secret，登录要记录到的
+                Last.fm
+                账户。回到个人后台重新点击连接，不要刷新旧授权回调网址。完成后回扩展刷新状态并核对用户名。
+              </p>
+            </details>
+            <details>
+              <summary>播放后还没看到记录</summary>
+              <p>
+                确认扩展显示记录已开启，再播放新歌并等待历史更新及自动检查。点一次「刷新状态」，查看待处理数量和错误文字。若显示待处理，请查看错误原因并等待下一轮检查。结果未确认时先核对
+                Last.fm，不要盲目重传或反复暂停、开始。
+              </p>
+            </details>
+            <details>
+              <summary>需要反馈问题</summary>
+              <p>
+                提供出错步骤、扩展版本、错误文字和时间，可以附脱敏截图。不要分享
+                Token、Shared
+                Secret、会话密钥、管理钥匙、凭据文件或完整授权回调网址。
+              </p>
+            </details>
+            <div class="step-actions">
+              <a class="text-link" href="#connect">← 返回服务连接说明</a>
+            </div>
+          </section>
+          <section id="existing" aria-labelledby="existing-title">
+            <span class="eyebrow">已有个人后台</span>
+            <h2 id="existing-title">打开自己的控制台</h2>
+            <p>
+              仅适合已经部署成功、知道个人后台网址的用户。首次使用请先安装完整扩展。此入口只打开后台，不会导入扩展或替你连接账户。
+            </p>
+            <form id="console-form">
+              <label for="console-url">个人后台网址</label>
+              <input
+                id="console-url"
+                type="url"
+                placeholder="https://你的服务.你的子域名.workers.dev"
+                required
+                autocomplete="url"
+                aria-describedby="url-status"
+              />
+              <button type="submit">打开我的控制台 ↗</button>
+              <p id="url-status" role="status" aria-live="polite">
+                只填写服务网址；管理钥匙在你自己的后台输入。
+              </p>
+            </form>
+            <a class="text-link" href="#prepare"
+              >还没有后台？从安装扩展开始 →</a
+            >
+          </section>
+        </div>
+      </div>
+      <footer>
+        网页提供安装指南 · 完整扩展负责设置 ·
+        你的后台负责记录。音乐凭据和播放记录不保存在本站。
+      </footer>
+    </main>
+  </body>
+</html>

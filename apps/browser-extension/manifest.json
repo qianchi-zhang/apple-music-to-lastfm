@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Apple Music Scrobbler",
+  "version": "0.1.0",
+  "description": "逐步连接自己的 Cloudflare、Apple Music 和 Last.fm，自动记录听过的歌。",
+  "minimum_chrome_version": "103",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "optional_host_permissions": ["https://*/*"],
+  "action": {
+    "default_title": "打开音乐记录控制台",
+    "default_icon": {
+      "16": "assets/brand-icon-16.png",
+      "32": "assets/brand-icon-32.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "app.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "assets/brand-icon-16.png",
+    "32": "assets/brand-icon-32.png",
+    "48": "assets/brand-icon-48.png",
+    "128": "assets/brand-icon-128.png"
+  }
+}
